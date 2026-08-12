@@ -97,6 +97,7 @@ $routes->get('logout', [Auth::class, 'logout']);
 // ==========================================
 
 $routes->group('admin', ['filter' => 'adminAuth'], function ($routes) {
+    $routes->get('', [Dashboard::class, 'index']);
     $routes->get('dashboard', [Dashboard::class, 'index']);
     
     // CRUD Postingan
