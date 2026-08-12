@@ -5,9 +5,9 @@
 <!-- Hero Section -->
 <header class="hero pb-5">
     <div class="container text-center pt-5 pb-5">
-        <div class="eyebrow mb-3 text-uppercase"><?= lang('Multimedia.truth_sets_free.badge') ?></div>
-        <h1 class="mx-auto" style="max-width:760px; font-size:2.2rem;"><?= lang('Multimedia.truth_sets_free.hero_title') ?></h1>
-        <p class="lead text-light opacity-90 mx-auto" style="max-width: 650px;"><?= lang('Multimedia.truth_sets_free.hero_subtitle') ?></p>
+        <div class="eyebrow mb-3 text-uppercase" data-aos="fade-down"><?= lang('Multimedia.truth_sets_free.badge') ?></div>
+        <h1 class="mx-auto" style="max-width:760px; font-size:2.2rem;" data-aos="fade-down" data-aos-delay="100"><?= lang('Multimedia.truth_sets_free.hero_title') ?></h1>
+        <p class="lead text-light opacity-90 mx-auto" style="max-width: 650px;" data-aos="fade-down" data-aos-delay="200"><?= lang('Multimedia.truth_sets_free.hero_subtitle') ?></p>
     </div>
 </header>
 
@@ -16,11 +16,11 @@
     <div class="container">
         
         <!-- Bagian Pengantar / Deskripsi Program -->
-        <div class="row justify-content-center mb-5">
+        <div class="row justify-content-center mb-5" data-aos="fade-up">
             <div class="col-lg-10">
                 <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
-                    <h2 class="h3 fw-bold text-dark mb-4 pb-2 border-bottom"><?= lang('Multimedia.truth_sets_free.about_title') ?></h2>
-                    <div class="text-secondary lh-lg mb-4">
+                    <h2 class="h3 fw-bold text-dark mb-4 pb-2 border-bottom" data-aos="fade-up" data-aos-delay="100"><?= lang('Multimedia.truth_sets_free.about_title') ?></h2>
+                    <div class="text-secondary lh-lg mb-4" data-aos="fade-up" data-aos-delay="150">
                         <p class="mb-3">
                             <?= lang('Multimedia.truth_sets_free.p1') ?>
                         </p>
@@ -30,8 +30,8 @@
                     </div>
 
                     <!-- Informasi Siaran & CD -->
-                    <div class="row g-4 pt-3 border-top">
-                        <div class="col-md-6">
+                    <div class="row g-4 pt-3 border-top" data-aos="fade-up" data-aos-delay="200">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="250">
                             <div class="p-3 bg-light rounded-3 h-100 border-start border-4 border-danger">
                                 <h6 class="fw-bold text-dark mb-2"><i class="bi bi-broadcast text-danger me-2"></i> <?= lang('Multimedia.truth_sets_free.schedule_title') ?></h6>
                                 <p class="text-secondary small mb-0">
@@ -39,7 +39,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
                             <div class="p-3 bg-light rounded-3 h-100 border-start border-4 border-primary">
                                 <h6 class="fw-bold text-dark mb-2"><i class="bi bi-disc text-primary me-2"></i> <?= lang('Multimedia.truth_sets_free.cd_title') ?></h6>
                                 <p class="text-secondary small mb-0">
@@ -55,19 +55,21 @@
         <!-- Daftar Khotbah & Download MP3 -->
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <div class="d-flex align-items-center justify-content-between mb-4">
+                <div class="d-flex align-items-center justify-content-between mb-4" data-aos="fade-up">
                     <h3 class="h4 fw-bold text-dark mb-0"><?= lang('Multimedia.truth_sets_free.audio_list_title') ?></h3>
                     <span class="badge bg-primary rounded-pill px-3 py-2"><?= lang('Multimedia.truth_sets_free.audio_badge') ?></span>
                 </div>
                 <?php if (!empty($audios)): ?>
-                    <?php $no = 1; foreach ($audios as $audio): ?>
-                        <?php 
-                            // Menentukan URL file audio (Lokal vs Eksternal)
-                            $audioSrc = ($audio['audio_type'] === 'file') 
-                            ? base_url('uploads/audio/' . $audio['audio_file']) 
-                            : $audio['audio_file'];
-                        ?>
-                        <div class="card border border-light-subtle shadow-sm p-3 rounded-3 mb-3">
+                    <?php 
+                    $no = 1; 
+                    $delay = 100;
+                    foreach ($audios as $audio): 
+                        // Menentukan URL file audio (Lokal vs Eksternal)
+                        $audioSrc = ($audio['audio_type'] === 'file') 
+                        ? base_url('uploads/audio/' . $audio['audio_file']) 
+                        : $audio['audio_file'];
+                    ?>
+                        <div class="card border border-light-subtle shadow-sm p-3 rounded-3 mb-3" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
                             <div class="row align-items-center g-3">
                                 <div class="col-auto">
                                     <div class="rounded-circle bg-primary-subtle text-primary fw-bold d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
@@ -93,9 +95,14 @@
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach; ?>
+                    <?php 
+                        if ($delay < 400) {
+                            $delay += 25;
+                        }
+                    endforeach; 
+                    ?>
                 <?php else: ?>
-                    <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4" data-aos="fade-up">
                         <p class="h4 fw-bold text-dark mb-0"><?= lang('Multimedia.truth_sets_free.empty_audios') ?></p>
                     </div>
                 <?php endif; ?>

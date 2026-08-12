@@ -5,9 +5,9 @@
 <!-- Hero Section -->
 <header class="hero pb-5">
     <div class="container text-center pt-5 pb-5">
-        <div class="eyebrow mb-3 text-uppercase"><?= lang('Multimedia.pearls_of_truth.badge') ?></div>
-        <h1 class="mx-auto" style="max-width:760px; font-size:2.2rem;"><?= lang('Multimedia.pearls_of_truth.hero_title') ?></h1>
-        <p class="lead text-light opacity-90 mx-auto" style="max-width: 650px;"><?= lang('Multimedia.pearls_of_truth.hero_subtitle') ?></p>
+        <div class="eyebrow mb-3 text-uppercase" data-aos="fade-down" data-aos-duration="800"><?= lang('Multimedia.pearls_of_truth.badge') ?></div>
+        <h1 class="mx-auto" style="max-width:760px; font-size:2.2rem;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><?= lang('Multimedia.pearls_of_truth.hero_title') ?></h1>
+        <p class="lead text-light opacity-90 mx-auto" style="max-width: 650px;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><?= lang('Multimedia.pearls_of_truth.hero_subtitle') ?></p>
     </div>
 </header>
 
@@ -18,7 +18,7 @@
         <!-- Bagian Pengantar / Deskripsi Program -->
         <div class="row justify-content-center mb-5">
             <div class="col-lg-10">
-                <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
+                <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white" data-aos="fade-up" data-aos-duration="1000">
                     <h2 class="h3 fw-bold text-dark mb-4 pb-2 border-bottom"><?= lang('Multimedia.pearls_of_truth.about_title') ?></h2>
                     <div class="text-secondary lh-lg mb-4">
                         <p class="mb-3">
@@ -31,7 +31,7 @@
 
                     <!-- Informasi Jadwal & Pemesanan -->
                     <div class="row g-4 pt-3 border-top">
-                        <div class="col-md-6">
+                        <div class="col-md-6" data-aos="fade-right" data-aos-duration="900" data-aos-delay="100">
                             <div class="p-3 bg-light rounded-3 h-100 border-start border-4 border-danger">
                                 <h6 class="fw-bold text-dark mb-2"><i class="bi bi-broadcast text-danger me-2"></i> <?= lang('Multimedia.pearls_of_truth.schedule_title') ?></h6>
                                 <p class="text-secondary small mb-0">
@@ -39,7 +39,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
                             <div class="p-3 bg-light rounded-3 h-100 border-start border-4 border-primary">
                                 <h6 class="fw-bold text-dark mb-2"><i class="bi bi-disc text-primary me-2"></i> <?= lang('Multimedia.pearls_of_truth.cd_title') ?></h6>
                                 <p class="text-secondary small mb-0">
@@ -55,21 +55,21 @@
         <!-- Daftar Audio Khotbah Berdasarkan Kitab -->
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <p class="text-secondary small mb-3">
+                <p class="text-secondary small mb-3" data-aos="fade-up" data-aos-duration="800">
                     <?= lang('Multimedia.pearls_of_truth.list_desc') ?>
                 </p>
-                <div class="d-flex align-items-center justify-content-between mb-4">
+                <div class="d-flex align-items-center justify-content-between mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <h3 class="h4 fw-bold text-dark mb-0"><?= lang('Multimedia.pearls_of_truth.list_title') ?></h3>
                     <span class="badge bg-primary rounded-pill px-3 py-2"><?= lang('Multimedia.pearls_of_truth.list_badge') ?></span>
                 </div>
 
                 <!-- Bagian KITAB KEJADIAN -->
                 <div class="mb-4">
-                    <h5 class="fw-bold text-danger mb-3"><i class="bi bi-book-fill me-2"></i> <?= lang('Multimedia.pearls_of_truth.books.genesis') ?></h5>
+                    <h5 class="fw-bold text-danger mb-3" data-aos="fade-right" data-aos-duration="800"><i class="bi bi-book-fill me-2"></i> <?= lang('Multimedia.pearls_of_truth.books.genesis') ?></h5>
                     <div class="vstack gap-3">
                         
                         <!-- Kejadian 1 -->
-                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white" data-aos="fade-up" data-aos-duration="800">
                             <div class="row align-items-center g-3">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-start">
@@ -95,7 +95,7 @@
                         </div>
 
                         <!-- Kejadian 2 -->
-                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white" data-aos="fade-up" data-aos-duration="800">
                             <div class="row align-items-center g-3">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-start">
@@ -121,7 +121,7 @@
                         </div>
 
                         <!-- Kejadian 3 -->
-                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white" data-aos="fade-up" data-aos-duration="800">
                             <div class="row align-items-center g-3">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-start">
@@ -151,11 +151,11 @@
 
                 <!-- Bagian KITAB KELUARAN -->
                 <div class="mb-4">
-                    <h5 class="fw-bold text-danger mb-3"><i class="bi bi-book-fill me-2"></i> <?= lang('Multimedia.pearls_of_truth.books.exodus') ?></h5>
+                    <h5 class="fw-bold text-danger mb-3" data-aos="fade-right" data-aos-duration="800"><i class="bi bi-book-fill me-2"></i> <?= lang('Multimedia.pearls_of_truth.books.exodus') ?></h5>
                     <div class="vstack gap-3">
                         
                         <!-- Keluaran 7 -->
-                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white" data-aos="fade-up" data-aos-duration="800">
                             <div class="row align-items-center g-3">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-start">
@@ -181,7 +181,7 @@
                         </div>
 
                         <!-- Keluaran 8 -->
-                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white" data-aos="fade-up" data-aos-duration="800">
                             <div class="row align-items-center g-3">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-start">
@@ -207,7 +207,7 @@
                         </div>
 
                         <!-- Keluaran 9 -->
-                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white" data-aos="fade-up" data-aos-duration="800">
                             <div class="row align-items-center g-3">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-start">
@@ -237,11 +237,11 @@
 
                 <!-- Bagian KITAB IMAMAT -->
                 <div class="mb-4">
-                    <h5 class="fw-bold text-danger mb-3"><i class="bi bi-book-fill me-2"></i> <?= lang('Multimedia.pearls_of_truth.books.leviticus') ?></h5>
+                    <h5 class="fw-bold text-danger mb-3" data-aos="fade-right" data-aos-duration="800"><i class="bi bi-book-fill me-2"></i> <?= lang('Multimedia.pearls_of_truth.books.leviticus') ?></h5>
                     <div class="vstack gap-3">
                         
                         <!-- Imamat 1 -->
-                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white" data-aos="fade-up" data-aos-duration="800">
                             <div class="row align-items-center g-3">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-start">
@@ -267,7 +267,7 @@
                         </div>
 
                         <!-- Imamat 2-3 -->
-                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white" data-aos="fade-up" data-aos-duration="800">
                             <div class="row align-items-center g-3">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-start">
@@ -293,7 +293,7 @@
                         </div>
 
                         <!-- Imamat 4-5 -->
-                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white" data-aos="fade-up" data-aos-duration="800">
                             <div class="row align-items-center g-3">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-start">

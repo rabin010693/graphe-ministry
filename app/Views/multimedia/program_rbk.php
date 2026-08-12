@@ -5,9 +5,9 @@
 <!-- Hero Section -->
 <header class="hero bg-primary text-white py-5 position-relative overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('<?= base_url('assets/img/hero-bg.jpg') ?>') center/cover no-repeat;">
     <div class="container text-center py-5 position-relative">
-        <span class="badge bg-danger text-uppercase tracking-wider px-3 py-2 mb-3 fw-semibold">radio RBK</span>
-        <h1 class="display-5 fw-bold text-white mb-2">Program Radio Berita Klasik - AM 828</h1>
-        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;">Menyebarluaskan pengajaran Alkitab yang logis, akademis, dan mendalam melalui karya tulis rohani dan teologis berkualitas</p>
+        <span class="badge bg-danger text-uppercase tracking-wider px-3 py-2 mb-3 fw-semibold" data-aos="fade-down" data-aos-duration="800">radio RBK</span>
+        <h1 class="display-5 fw-bold text-white mb-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">Program Radio Berita Klasik - AM 828</h1>
+        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Menyebarluaskan pengajaran Alkitab yang logis, akademis, dan mendalam melalui karya tulis rohani dan teologis berkualitas</p>
     </div>
 </header>
 
@@ -18,7 +18,7 @@
         
         <!-- Header Informasi Jadwal -->
         <div class="row justify-content-center mb-5">
-            <div class="col-lg-8 text-center">
+            <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-duration="1000">
                 <h2 class="h3 fw-bold text-dark mb-3">Program Mingguan RBK</h2>
                 <p class="text-muted mb-2"><i class="bi bi-clock me-1 text-primary"></i> Semua waktu dalam jadwal di bawah adalah <strong>WIB (GMT +7)</strong></p>
                 <div class="alert alert-primary bg-white border-0 shadow-sm rounded-4 p-3 text-secondary small d-inline-block">
@@ -28,7 +28,7 @@
         </div>
 
         <!-- Tabel 1: Senin - Jumat -->
-        <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white mb-5">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white mb-5" data-aos="fade-up" data-aos-duration="1000">
             <div class="card-header bg-danger text-white py-3 px-4">
                 <h5 class="card-title mb-0 fw-bold"><i class="bi bi-calendar-week me-2"></i>Jadwal Program (Senin - Jumat)</h5>
             </div>
@@ -164,7 +164,7 @@
         </div>
 
         <!-- Tabel 2: Sabtu & Minggu -->
-        <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white" data-aos="fade-up" data-aos-duration="1000">
             <div class="card-header bg-secondary text-white py-3 px-4">
                 <h5 class="card-title mb-0 fw-bold"><i class="bi bi-calendar-weekend me-2"></i>Jadwal Program (Sabtu & Minggu)</h5>
             </div>
@@ -271,7 +271,7 @@
                             <td colspan="2" class="fw-semibold text-center py-2 bg-primary-subtle text-primary">Kebenaran yang Memerdekakan</td>
                         </tr>
                         <tr>
-                            <td class="fw-medium text-dark">Mendapat Kepastian masuk Surgb</td>
+                            <td class="fw-medium text-dark">Mendapat Kepastian masuk Surga</td>
                             <td class="fw-medium text-dark">Mendapat Kepastian masuk Surga</td>
                         </tr>
 

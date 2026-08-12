@@ -3,11 +3,11 @@
 <?= $this->section('content') ?>
 
 <!-- Hero Section -->
-<header class="hero pb-5">
-    <div class="container text-center pt-5 pb-5">
-        <div class="eyebrow mb-3 text-uppercase"><?= lang('Multimedia.radio.badge') ?></div>
-        <h1 class="mx-auto" style="max-width:760px; font-size:2.2rem;"><?= lang('Multimedia.radio.hero_title') ?></h1>
-        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;"><?= lang('Multimedia.radio.hero_subtitle') ?></p>
+<header class="hero pb-5 bg-primary text-white position-relative overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('<?= base_url('assets/img/hero-bg.jpg') ?>') center/cover no-repeat;">
+    <div class="container text-center pt-5 pb-5 position-relative">
+        <div class="eyebrow mb-3 text-uppercase fw-semibold tracking-wider text-danger" data-aos="fade-down" data-aos-duration="800"><?= lang('Multimedia.radio.badge') ?></div>
+        <h1 class="mx-auto text-white fw-bold" style="max-width:760px; font-size:2.2rem;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><?= lang('Multimedia.radio.hero_title') ?></h1>
+        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><?= lang('Multimedia.radio.hero_subtitle') ?></p>
     </div>
 </header>
 
@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row g-4">
             <!-- Kolom Kiri: Deskripsi & Visi Misi Radio Berita Klasik -->
-            <div class="col-lg-8">
+            <div class="col-lg-8" data-aos="fade-up" data-aos-duration="1000">
                 <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 h-100 bg-white">
                     
                     <!-- Header Profil Radio -->
@@ -43,7 +43,7 @@
                     </div>
 
                     <!-- Box Informasi Jangkauan -->
-                    <div class="p-4 bg-light rounded-4 border-start border-4 border-danger mb-4 shadow-sm">
+                    <div class="p-4 bg-light rounded-4 border-start border-4 border-danger mb-4 shadow-sm" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
                         <h5 class="fw-bold text-dark mb-2">
                             <i class="fas fa-satellite-dish me-2 text-danger"></i><?= lang('Multimedia.radio.coverage_title') ?>
                         </h5>
@@ -53,7 +53,7 @@
                     </div>
                     
                     <!-- Call to Action (CTA) Program Radio -->
-                    <div class="p-4 bg-danger-subtle rounded-4 border border-danger-subtle text-center text-md-start d-md-flex justify-content-between align-items-center mt-4">
+                    <div class="p-4 bg-danger-subtle rounded-4 border border-danger-subtle text-center text-md-start d-md-flex justify-content-between align-items-center mt-4" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
                         <div class="mb-3 mb-md-0">
                             <h6 class="fw-bold text-dark mb-1"><?= lang('Multimedia.radio.cta_title') ?></h6>
                             <p class="text-secondary small mb-0"><?= lang('Multimedia.radio.cta_desc') ?></p>
@@ -67,13 +67,13 @@
             </div>
         
             <!-- Kolom Kanan: Informasi & Kontak (Sidebar) -->
-            <div class="col-lg-4">
+            <div class="col-lg-4" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
 
-                <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white mb-4">
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white mb-4" data-aos="fade-up" data-aos-duration="800">
                     <img src="<?= base_url('assets/img/radio_station.png') ?>" class="card-img-top object-fit-cover" style="height: 400px;" alt="Informasi Stasiun Radio RBK">
                 </div>
 
-                <div class="card border-0 shadow-sm rounded-4 p-4 bg-white mb-4">
+                <div class="card border-0 shadow-sm rounded-4 p-4 bg-white mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <h4 class="h5 fw-bold text-dark mb-3 pb-2 border-bottom"><?= lang('Multimedia.radio.info_title') ?></h4>
                     <ul class="list-unstyled text-secondary mb-0 small">
                         <li class="mb-3 d-flex align-items-start">
@@ -101,7 +101,7 @@
                 </div>
 
                 <!-- Kartu Kontak & Marketing -->
-                <div class="card border-0 shadow-sm rounded-4 p-4 bg-danger text-white">
+                <div class="card border-0 shadow-sm rounded-4 p-4 bg-danger text-white" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <h4 class="h5 fw-bold mb-3 pb-2 border-bottom border-light opacity-75"><?= lang('Multimedia.radio.contact_title') ?></h4>
                     <ul class="list-unstyled mb-0 small">
                         <li class="mb-3 d-flex align-items-center">

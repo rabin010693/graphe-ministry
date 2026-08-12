@@ -3,11 +3,11 @@
 <?= $this->section('content') ?>
 
 <!-- Hero Section -->
-<header class="hero pb-5">
-    <div class="container text-center pt-5 pb-5">
-        <div class="eyebrow mb-3 text-uppercase"><?= lang('Multimedia.through_the_bible.badge') ?></div>
-        <h1 class="mx-auto" style="max-width:760px; font-size:2.2rem;"><?= lang('Multimedia.through_the_bible.hero_title') ?></h1>
-        <p class="lead text-light opacity-90 mx-auto" style="max-width: 650px;"><?= lang('Multimedia.through_the_bible.hero_subtitle') ?></p>
+<header class="hero pb-5 bg-primary text-white position-relative overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('<?= base_url('assets/img/hero-bg.jpg') ?>') center/cover no-repeat;">
+    <div class="container text-center pt-5 pb-5 position-relative">
+        <div class="eyebrow mb-3 text-uppercase fw-semibold tracking-wider text-danger" data-aos="fade-down" data-aos-duration="800"><?= lang('Multimedia.through_the_bible.badge') ?></div>
+        <h1 class="mx-auto text-white fw-bold" style="max-width:760px; font-size:2.2rem;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><?= lang('Multimedia.through_the_bible.hero_title') ?></h1>
+        <p class="lead text-light opacity-90 mx-auto" style="max-width: 650px;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><?= lang('Multimedia.through_the_bible.hero_subtitle') ?></p>
     </div>
 </header>
 
@@ -18,7 +18,7 @@
         
         <!-- Bagian Pengantar / Deskripsi Program -->
         <div class="row justify-content-center mb-5">
-            <div class="col-lg-10">
+            <div class="col-lg-10" data-aos="fade-up" data-aos-duration="1000">
                 <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
                     <h2 class="h3 fw-bold text-dark mb-4 pb-2 border-bottom"><?= lang('Multimedia.through_the_bible.about_title') ?></h2>
                     <div class="text-secondary lh-lg mb-4">
@@ -31,7 +31,7 @@
                     </div>
 
                     <!-- Informasi Siaran Radio -->
-                    <div class="p-3 bg-light rounded-3 border-start border-4 border-primary mt-3">
+                    <div class="p-3 bg-light rounded-3 border-start border-4 border-primary mt-3" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
                         <h6 class="fw-bold text-dark mb-2"><i class="bi bi-broadcast text-primary me-2"></i> <?= lang('Multimedia.through_the_bible.schedule_title') ?></h6>
                         <p class="text-secondary small mb-0">
                             <?= lang('Multimedia.through_the_bible.schedule_desc') ?>
@@ -45,12 +45,12 @@
         <div class="row justify-content-center mb-5">
             <div class="col-lg-10">
                 <!-- Deskripsi Singkat di Atas -->
-                <p class="text-secondary small mb-3">
+                <p class="text-secondary small mb-3" data-aos="fade-up" data-aos-duration="800">
                     <?= lang('Multimedia.through_the_bible.list_desc') ?>
                 </p>
 
                 <!-- Header Judul & Badge -->
-                <div class="d-flex align-items-center justify-content-between mb-4">
+                <div class="d-flex align-items-center justify-content-between mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <h3 class="h4 fw-bold text-dark mb-0">
                         <?= lang('Multimedia.through_the_bible.list_title') ?>
                     </h3>
@@ -62,7 +62,7 @@
                 <div class="vstack gap-3">
             
                     <!-- Item 1 -->
-                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
                         <div class="row align-items-center g-3">
                             <div class="col-lg-6">
                                 <div class="d-flex align-items-start">
@@ -88,7 +88,7 @@
                     </div>
 
                     <!-- Item 2 -->
-                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                         <div class="row align-items-center g-3">
                             <div class="col-lg-6">
                                 <div class="d-flex align-items-start">
@@ -114,7 +114,7 @@
                     </div>
 
                     <!-- Item 3 -->
-                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
                         <div class="row align-items-center g-3">
                             <div class="col-lg-6">
                                 <div class="d-flex align-items-start">
@@ -140,7 +140,7 @@
                     </div>
 
                     <!-- Item 4 -->
-                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                         <div class="row align-items-center g-3">
                             <div class="col-lg-6">
                                 <div class="d-flex align-items-start">
@@ -171,7 +171,7 @@
 
         <!-- Kotak Informasi Pemesanan CD -->
         <div class="row justify-content-center">
-            <div class="col-lg-10">
+            <div class="col-lg-10" data-aos="zoom-in" data-aos-duration="900">
                 <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-dark text-white">
                     <div class="row align-items-center g-4">
                         <div class="col-lg-8">

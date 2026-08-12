@@ -3,11 +3,11 @@
 <?= $this->section('content') ?>
 
 <!-- Hero Section -->
-<header class="hero pb-5">
-    <div class="container text-center pt-5 pb-5">
-        <div class="eyebrow mb-3 text-uppercase"><?= lang('Multimedia.video.badge') ?></div>
-        <h1 class="mx-auto" style="max-width:760px; font-size:2.2rem;"><?= lang('Multimedia.video.hero_title') ?></h1>
-        <p class="lead text-light opacity-90 mx-auto" style="max-width: 650px;"><?= lang('Multimedia.video.hero_subtitle') ?></p>
+<header class="hero pb-5 bg-primary text-white position-relative overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('<?= base_url('assets/img/hero-bg.jpg') ?>') center/cover no-repeat;">
+    <div class="container text-center pt-5 pb-5 position-relative">
+        <div class="eyebrow mb-3 text-uppercase fw-semibold tracking-wider text-danger" data-aos="fade-down" data-aos-duration="800"><?= lang('Multimedia.video.badge') ?></div>
+        <h1 class="mx-auto text-white fw-bold" style="max-width:760px; font-size:2.2rem;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><?= lang('Multimedia.video.hero_title') ?></h1>
+        <p class="lead text-light opacity-90 mx-auto" style="max-width: 650px;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><?= lang('Multimedia.video.hero_subtitle') ?></p>
     </div>
 </header>
 
@@ -26,7 +26,7 @@
         ?>
 
         <!-- Featured / Live Streaming Utama (Hero Video) -->
-        <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white mb-5">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white mb-5" data-aos="fade-up" data-aos-duration="1000">
             <div class="row g-0 align-items-center">
                 <div class="col-lg-7">
                     <!-- Responsive YouTube Embed -->
@@ -47,7 +47,7 @@
         </div>
 
         <!-- Filter Kategori Tombol -->
-        <div class="row justify-content-center mb-4">
+        <div class="row justify-content-center mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
             <div class="col-lg-8 text-center">
                 <div class="btn-group flex-wrap gap-2 justify-content-center" role="group" aria-label="Filter Video">
                     <button type="button" class="btn btn-dark rounded-pill px-4 py-2 active shadow-sm" data-filter="all"><?= lang('Multimedia.video.categories.all') ?></button>
@@ -62,7 +62,7 @@
         <div class="row g-4 video-grid">
             
             <!-- Item Video 1 -->
-            <div class="col-md-6 col-lg-4 video-item" data-category="ibadah">
+            <div class="col-md-6 col-lg-4 video-item" data-category="ibadah" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
                 <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white h-100">
                     <div class="ratio ratio-16x9">
                         <iframe src="https://www.youtube.com/embed/Q9OnZlgXLdo?start=2" title="Video Khotbah" allowfullscreen loading="lazy"></iframe>
@@ -76,7 +76,7 @@
             </div>
 
             <!-- Item Video 2 -->
-            <div class="col-md-6 col-lg-4 video-item" data-category="khotbah">
+            <div class="col-md-6 col-lg-4 video-item" data-category="khotbah" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white h-100">
                     <div class="ratio ratio-16x9">
                         <iframe src="https://www.youtube.com/embed/zulrAIOVn6Y?start=3" title="Video Teologi" allowfullscreen loading="lazy"></iframe>
@@ -90,7 +90,7 @@
             </div>
 
             <!-- Item Video 3 -->
-            <div class="col-md-6 col-lg-4 video-item" data-category="pemuda">
+            <div class="col-md-6 col-lg-4 video-item" data-category="pemuda" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
                 <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white h-100">
                     <div class="ratio ratio-16x9">
                         <iframe src="https://www.youtube.com/embed/qnpxm8kNUhQ?start=13" title="Video Pemuda" allowfullscreen loading="lazy"></iframe>
