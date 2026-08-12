@@ -5,9 +5,9 @@
 <!-- Hero Section -->
 <header class="hero bg-primary text-white py-5 position-relative overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('<?= base_url('assets/img/hero-bg.jpg') ?>') center/cover no-repeat;">
     <div class="container text-center py-5 position-relative">
-        <span class="badge bg-danger text-uppercase tracking-wider px-3 py-2 mb-3 fw-semibold"><?= lang('Downloads.articles.badge') ?></span>
-        <h1 class="display-5 fw-bold text-white mb-2"><?= lang('Downloads.articles.hero_title') ?></h1>
-        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;"><?= lang('Downloads.articles.hero_subtitle') ?></p>
+        <span class="badge bg-danger text-uppercase tracking-wider px-3 py-2 mb-3 fw-semibold" data-aos="fade-down"><?= lang('Downloads.articles.badge') ?></span>
+        <h1 class="display-5 fw-bold text-white mb-2" data-aos="fade-down" data-aos-delay="100"><?= lang('Downloads.articles.hero_title') ?></h1>
+        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;" data-aos="fade-down" data-aos-delay="200"><?= lang('Downloads.articles.hero_subtitle') ?></p>
     </div>
 </header>
 
@@ -15,19 +15,19 @@
 <section class="py-5 bg-light">
     <div class="container">
         <!-- Intro Card -->
-        <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card border-0 shadow-sm rounded-4 mb-4" data-aos="fade-up">
             <div class="card-body p-4 p-md-5 text-center">
-                <h3 class="fw-bold text-dark mb-2 fs-5 fs-md-4"><?= lang('Downloads.articles.library_title') ?></h3>
-                <p class="text-muted mb-0 small">
+                <h3 class="fw-bold text-dark mb-2 fs-5 fs-md-4" data-aos="fade-up" data-aos-delay="100"><?= lang('Downloads.articles.library_title') ?></h3>
+                <p class="text-muted mb-0 small" data-aos="fade-up" data-aos-delay="150">
                     <?= lang('Downloads.articles.library_desc') ?>
                 </p>
             </div>
         </div>
 
         <!-- Bagian 1: Buku Online -->
-        <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card border-0 shadow-sm rounded-4 mb-4" data-aos="fade-up">
             <div class="card-body p-4 p-md-5">
-                <div class="d-flex align-items-center mb-4 border-bottom pb-3">
+                <div class="d-flex align-items-center mb-4 border-bottom pb-3" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-book text-primary fs-3 me-3 flex-shrink-0"></i>
                     <div>
                         <h4 class="fw-bold text-dark mb-1 fs-5 fs-md-4"><?= lang('Downloads.articles.section_books.title') ?></h4>
@@ -35,15 +35,16 @@
                     </div>
                 </div>
 
-                <div class="list-group list-group-flush border rounded-3 overflow-hidden shadow-sm">
+                <div class="list-group list-group-flush border rounded-3 overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="150">
                     <?php 
                     $buku = [
                         [lang('Downloads.articles.section_books.items.whenever_die'), "#"],
                         [lang('Downloads.articles.section_books.items.sacrificial_lamb'), "#"]
                     ];
+                    $delay = 200;
                     foreach($buku as $item): 
                     ?>
-                    <div class="list-group-item list-group-item-action p-3 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+                    <div class="list-group-item list-group-item-action p-3 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
                         <span class="fw-semibold text-dark">
                             <i class="fas fa-book-open text-primary me-2"></i> <?= $item[0] ?>
                         </span>
@@ -51,15 +52,18 @@
                             <i class="fas fa-download me-1"></i> <?= lang('Downloads.articles.download_pdf') ?>
                         </a>
                     </div>
-                    <?php endforeach; ?>
+                    <?php 
+                        $delay += 50;
+                    endforeach; 
+                    ?>
                 </div>
             </div>
         </div>
 
         <!-- Bagian 2: Traktat Online -->
-        <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card border-0 shadow-sm rounded-4 mb-4" data-aos="fade-up">
             <div class="card-body p-4 p-md-5">
-                <div class="d-flex align-items-center mb-4 border-bottom pb-3">
+                <div class="d-flex align-items-center mb-4 border-bottom pb-3" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-file-alt text-success fs-3 me-3 flex-shrink-0"></i>
                     <div>
                         <h4 class="fw-bold text-dark mb-1 fs-5 fs-md-4"><?= lang('Downloads.articles.section_tracts.title') ?></h4>
@@ -67,16 +71,17 @@
                     </div>
                 </div>
 
-                <div class="list-group list-group-flush border rounded-3 overflow-hidden shadow-sm">
+                <div class="list-group list-group-flush border rounded-3 overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="150">
                     <?php 
                     $traktat = [
                         [lang('Downloads.articles.section_tracts.items.five_steps'), "#"],
                         [lang('Downloads.articles.section_tracts.items.i_have_told'), "#"],
                         [lang('Downloads.articles.section_tracts.items.religious_man'), "#"]
                     ];
+                    $delay = 200;
                     foreach($traktat as $item): 
                     ?>
-                    <div class="list-group-item list-group-item-action p-3 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+                    <div class="list-group-item list-group-item-action p-3 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
                         <span class="fw-semibold text-dark">
                             <i class="fas fa-file-invoice text-success me-2"></i> <?= $item[0] ?>
                         </span>
@@ -84,15 +89,18 @@
                             <i class="fas fa-download me-1"></i> <?= lang('Downloads.articles.download_pdf') ?>
                         </a>
                     </div>
-                    <?php endforeach; ?>
+                    <?php 
+                        $delay += 50;
+                    endforeach; 
+                    ?>
                 </div>
             </div>
         </div>
 
         <!-- Bagian 3: Artikel Online -->
-        <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card border-0 shadow-sm rounded-4 mb-4" data-aos="fade-up">
             <div class="card-body p-4 p-md-5">
-                <div class="d-flex align-items-center mb-4 border-bottom pb-3">
+                <div class="d-flex align-items-center mb-4 border-bottom pb-3" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-newspaper text-danger fs-3 me-3"></i>
                     <div>
                         <h4 class="fw-bold text-dark mb-1"><?= lang('Downloads.articles.section_articles.title') ?></h4>
@@ -100,7 +108,7 @@
                     </div>
                 </div>
 
-                <div class="list-group list-group-flush border rounded-3 overflow-hidden shadow-sm">
+                <div class="list-group list-group-flush border rounded-3 overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="150">
                     <?php 
                     $artikel = [
                         lang('Downloads.articles.section_articles.items.fundamentalist'),
@@ -130,9 +138,10 @@
                         lang('Downloads.articles.section_articles.items.music_principles'),
                         lang('Downloads.articles.section_articles.items.rock_music')
                     ];
+                    $delay = 200;
                     foreach($artikel as $art): 
                     ?>
-                    <div class="list-group-item list-group-item-action p-3 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+                    <div class="list-group-item list-group-item-action p-3 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
                         <span class="fw-semibold text-dark">
                             <i class="fas fa-bookmark text-danger me-2"></i> <?= $art ?>
                         </span>
@@ -142,19 +151,25 @@
                             </a>
                         </div>
                     </div>
-                    <?php endforeach; ?>
+                    <?php 
+                        // Batasi kelipatan delay agar tidak terlalu panjang/lambat jika item terlalu banyak
+                        if ($delay < 400) {
+                            $delay += 25;
+                        }
+                    endforeach; 
+                    ?>
                 </div>
             </div>
         </div>
 
         <!-- Info Call to Action Blog -->
-        <div class="alert alert-primary border-0 bg-opacity-10 text-dark p-4 rounded-4 shadow-sm text-center mb-0">
-            <i class="fas fa-blog text-primary fs-3 mb-2"></i>
-            <h5 class="fw-bold text-dark mb-2"><?= lang('Downloads.articles.cta_title') ?></h5>
-            <p class="text-muted small mb-3">
+        <div class="alert alert-primary border-0 bg-opacity-10 text-dark p-4 rounded-4 shadow-sm text-center mb-0" data-aos="fade-up">
+            <i class="fas fa-blog text-primary fs-3 mb-2" data-aos="fade-up" data-aos-delay="100"></i>
+            <h5 class="fw-bold text-dark mb-2" data-aos="fade-up" data-aos-delay="150"><?= lang('Downloads.articles.cta_title') ?></h5>
+            <p class="text-muted small mb-3" data-aos="fade-up" data-aos-delay="200">
                 <?= lang('Downloads.articles.cta_desc') ?>
             </p>
-            <a href="https://graphe-ministry.org/articles/" target="_blank" class="btn btn-primary px-4 py-2 rounded-pill shadow-sm fw-semibold">
+            <a href="https://graphe-ministry.org/articles/" target="_blank" class="btn btn-primary px-4 py-2 rounded-pill shadow-sm fw-semibold" data-aos="fade-up" data-aos-delay="250">
                 <i class="fas fa-external-link-alt me-2"></i> <?= lang('Downloads.articles.cta_btn') ?>
             </a>
         </div>

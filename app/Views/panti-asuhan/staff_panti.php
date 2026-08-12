@@ -5,9 +5,9 @@
 <!-- Hero Section -->
 <header class="hero bg-primary text-white py-5 position-relative overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('<?= base_url('assets/img/hero-bg.jpg') ?>') center/cover no-repeat;">
     <div class="container text-center py-5 position-relative">
-        <span class="badge bg-danger text-uppercase tracking-wider px-3 py-2 mb-3 fw-semibold"><?= lang('Orphanage.staff.badge') ?></span>
-        <h1 class="display-5 fw-bold text-white mb-2"><?= lang('Orphanage.staff.hero_title') ?></h1>
-        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;"><?= lang('Orphanage.staff.hero_subtitle') ?></p>
+        <span class="badge bg-danger text-uppercase tracking-wider px-3 py-2 mb-3 fw-semibold" data-aos="fade-down"><?= lang('Orphanage.staff.badge') ?></span>
+        <h1 class="display-5 fw-bold text-white mb-2" data-aos="fade-down" data-aos-delay="100"><?= lang('Orphanage.staff.hero_title') ?></h1>
+        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;" data-aos="fade-down" data-aos-delay="200"><?= lang('Orphanage.staff.hero_subtitle') ?></p>
     </div>
 </header>
 
@@ -16,9 +16,9 @@
     <div class="container">
         
         <!-- Section Staf Pengurus -->
-        <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card border-0 shadow-sm rounded-4 mb-4" data-aos="fade-up">
             <div class="card-body p-4 p-md-5">
-                <div class="d-flex align-items-center mb-4 border-bottom pb-3">
+                <div class="d-flex align-items-center mb-4 border-bottom pb-3" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-users-cog text-danger fs-3 me-3 flex-shrink-0"></i>
                     <div>
                         <h3 class="fw-bold text-dark mb-1 fs-5 fs-md-4"><?= lang('Orphanage.staff.staff_title') ?></h3>
@@ -28,8 +28,11 @@
 
                 <div class="row g-3">
                     <?php if (!empty($staffs)): ?>
-                        <?php foreach ($staffs as $s): ?>
-                            <div class="col-12 col-md-6">
+                        <?php 
+                        $delay = 150;
+                        foreach ($staffs as $s): 
+                        ?>
+                            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
                                 <div class="card border border-light-subtle shadow-sm p-3 h-100 rounded-3">
                                     <div class="d-flex align-items-center gap-3">
                                         <div class="rounded-circle bg-light d-flex align-items-center justify-content-center flex-shrink-0" style="width: 50px; height: 50px;">
@@ -42,20 +45,23 @@
                                     </div>
                                 </div>
                             </div>
-                        <?php endforeach; ?>
+                        <?php 
+                            $delay += 50;
+                        endforeach; 
+                        ?>
                     <?php else: ?>
-                        <div class="col-12 text-muted small"><?= lang('Orphanage.staff.no_staff') ?></div>
+                        <div class="col-12 text-muted small" data-aos="fade-up" data-aos-delay="150"><?= lang('Orphanage.staff.no_staff') ?></div>
                     <?php endif; ?>
                 </div>
             </div>
         </div>
 
         <!-- Section Data Anak-Anak -->
-        <div class="card border-0 shadow-sm rounded-4">
+        <div class="card border-0 shadow-sm rounded-4" data-aos="fade-up">
             <div class="card-body p-4 p-md-5">
                 
                 <!-- Header Card -->
-                <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3 mb-4">
+                <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="d-flex align-items-center">
                         <i class="fas fa-child text-danger fs-3 me-3 flex-shrink-0"></i>
                         <div>
@@ -69,7 +75,7 @@
                 </div>
 
                 <!-- Tabel Responsif -->
-                <div class="table-responsive">
+                <div class="table-responsive" data-aos="fade-up" data-aos-delay="150">
                     <table class="table table-bordered align-middle mb-0">
                         <thead style="background-color: #fce8e8;">
                             <tr>
@@ -107,7 +113,7 @@
                 </div>
 
                 <!-- Footer Info / Update Date -->
-                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 mt-4 pt-3 border-top text-muted small text-center text-md-start">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 mt-4 pt-3 border-top text-muted small text-center text-md-start" data-aos="fade-up" data-aos-delay="200">
                     <span>
                         <i class="fas fa-sync-alt me-1 text-primary"></i> 
                         <?= lang('Orphanage.staff.last_updated', [$last_updated]) ?>
