@@ -3,13 +3,11 @@
 <?= $this->section('content') ?>
 
 <!-- Hero Section -->
-<header class="hero text-white py-5">
-    <div class="container text-center py-4">
-        <div class="eyebrow mb-2 text-uppercase fw-bold small opacity-75" data-aos="fade-down"><?= lang('Multimedia.gallery.badge') ?></div>
-        <h1 class="mx-auto fw-bold mb-3" style="max-width: 760px; font-size: clamp(1.8rem, 4vw, 2.4rem);" data-aos="fade-down" data-aos-delay="100"><?= lang('Multimedia.gallery.hero_title') ?></h1>
-        <p class="lead opacity-90 mx-auto fs-6" style="max-width: 650px;" data-aos="fade-down" data-aos-delay="200">
-            <?= lang('Multimedia.gallery.hero_subtitle') ?>
-        </p>
+<header class="hero pb-5">
+    <div class="container text-center pt-5 pb-5">
+        <div class="eyebrow mb-3 text-uppercase" data-aos="fade-down" data-aos-duration="800"><?= lang('Multimedia.gallery.badge') ?></div>
+        <h1 class="mx-auto" style="max-width:760px; font-size:2.2rem;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><?= lang('Multimedia.gallery.hero_title') ?></h1>
+        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><?= lang('Multimedia.gallery.hero_subtitle') ?></p>
     </div>
 </header>
 

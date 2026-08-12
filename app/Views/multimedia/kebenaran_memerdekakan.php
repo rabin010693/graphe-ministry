@@ -3,11 +3,19 @@
 <?= $this->section('content') ?>
 
 <!-- Hero Section -->
-<header class="hero pb-5">
+<!-- <header class="hero pb-5">
     <div class="container text-center pt-5 pb-5">
         <div class="eyebrow mb-3 text-uppercase" data-aos="fade-down"><?= lang('Multimedia.truth_sets_free.badge') ?></div>
         <h1 class="mx-auto" style="max-width:760px; font-size:2.2rem;" data-aos="fade-down" data-aos-delay="100"><?= lang('Multimedia.truth_sets_free.hero_title') ?></h1>
         <p class="lead text-light opacity-90 mx-auto" style="max-width: 650px;" data-aos="fade-down" data-aos-delay="200"><?= lang('Multimedia.truth_sets_free.hero_subtitle') ?></p>
+    </div>
+</header> -->
+
+<header class="hero pb-5">
+    <div class="container text-center pt-5 pb-5">
+        <div class="eyebrow mb-3 text-uppercase" data-aos="fade-down" data-aos-duration="800"><?= lang('Multimedia.truth_sets_free.badge') ?></div>
+        <h1 class="mx-auto" style="max-width:760px; font-size:2.2rem;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><?= lang('Multimedia.truth_sets_free.hero_title') ?></h1>
+        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><?= lang('Multimedia.truth_sets_free.hero_subtitle') ?></p>
     </div>
 </header>
 

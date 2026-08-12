@@ -3,11 +3,19 @@
 <?= $this->section('content') ?>
 
 <!-- Hero Section -->
-<header class="hero pb-5 bg-primary text-white position-relative overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('<?= base_url('assets/img/hero-bg.jpg') ?>') center/cover no-repeat;">
+<!-- <header class="hero pb-5 bg-primary text-white position-relative overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('<?= base_url('assets/img/hero-bg.jpg') ?>') center/cover no-repeat;">
     <div class="container text-center pt-5 pb-5 position-relative">
         <div class="eyebrow mb-3 text-uppercase fw-semibold tracking-wider text-danger" data-aos="fade-down" data-aos-duration="800"><?= lang('Multimedia.video.badge') ?></div>
         <h1 class="mx-auto text-white fw-bold" style="max-width:760px; font-size:2.2rem;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><?= lang('Multimedia.video.hero_title') ?></h1>
         <p class="lead text-light opacity-90 mx-auto" style="max-width: 650px;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><?= lang('Multimedia.video.hero_subtitle') ?></p>
+    </div>
+</header> -->
+
+<header class="hero pb-5">
+    <div class="container text-center pt-5 pb-5">
+        <div class="eyebrow mb-3 text-uppercase" data-aos="fade-down" data-aos-duration="800"><?= lang('Multimedia.video.badge') ?></div>
+        <h1 class="mx-auto" style="max-width:760px; font-size:2.2rem;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><?= lang('Multimedia.video.hero_title') ?></h1>
+        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><?= lang('Multimedia.video.hero_subtitle') ?></p>
     </div>
 </header>
 

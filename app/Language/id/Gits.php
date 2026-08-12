@@ -119,7 +119,7 @@ return [
     ],
 
     'facilities' => [
-        'badge'         => 'various facilities',
+        'badge'         => 'berbagai fasilitas',
         'hero_title'    => 'Fasilitas',
         'hero_subtitle' => 'Sarana dan prasarana pendukung terbaik untuk menciptakan lingkungan pembelajaran teologi yang kondusif dan terpadu',
         'intro_title'   => 'Sarana Unggulan untuk Mendukung Studi',

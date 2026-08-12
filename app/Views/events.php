@@ -23,13 +23,20 @@
 ?>
 
 <!-- Header disesuaikan padding-nya agar tidak terlalu besar di mobile -->
-<header class="hero py-4 py-md-5 bg-light border-bottom">
+<!-- <header class="hero py-4 py-md-5 bg-light border-bottom">
     <div class="container text-center py-3">
         <div class="eyebrow mb-2 text-danger fw-bold small tracking-wider" data-aos="fade-down"><?= lang('Events.eyebrow') ?></div>
-        <!-- Menggunakan fluid typography agar pas di layar kecil -->
         <h1 class="mx-auto fw-bold" style="max-width: 760px; font-size: clamp(1.8rem, 4vw, 2.5rem);" data-aos="fade-down" data-aos-delay="100">
             <?= lang('Events.title') ?>
         </h1>
+    </div>
+</header> -->
+
+<header class="hero pb-5">
+    <div class="container text-center pt-5 pb-5">
+        <div class="eyebrow mb-3 text-uppercase" data-aos="fade-down" data-aos-duration="800"><?= lang('Events.eyebrow') ?></div>
+        <h1 class="mx-auto" style="max-width:760px; font-size:2.2rem;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><?= lang('Events.title') ?></h1>
+        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><?= lang('') ?></p>
     </div>
 </header>
 
