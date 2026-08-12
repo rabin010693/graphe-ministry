@@ -1,0 +1,251 @@
+:root{
+  --navy-950:#0a1220;
+  --navy-900:#0d1830;
+  --navy-800:#101d3a;
+  --red-600:#c8202f;
+  --red-700:#a91a28;
+  --text-muted-light:#b7bfce;
+  --font-heading:'Poppins',sans-serif;
+  --font-body:'Nunito Sans',sans-serif;
+}
+body{ font-family:var(--font-body); color:#2b2f3a; }
+h1,h2,h3,h4,h5,h6,.font-heading{ font-family:var(--font-heading); }
+a{ text-decoration:none; }
+.text-red{ color:var(--red-600) !important; }
+.bg-navy{ background-color:var(--navy-900) !important; }
+
+.btn-church{
+  background-color:var(--red-600); border:none; color:#fff;
+  font-family:var(--font-heading); font-weight:600; font-size:.72rem;
+  letter-spacing:1.5px; text-transform:uppercase; padding:.85rem 2rem;
+  border-radius:50px; transition:.25s ease; display:inline-block;
+}
+.btn-church:hover{ background-color:var(--red-700); color:#fff; transform:translateY(-2px); }
+.btn-church-outline{
+  background:transparent; border:1px solid rgba(255,255,255,.4); color:#fff;
+  font-family:var(--font-heading); font-weight:600; font-size:.72rem;
+  letter-spacing:1.5px; text-transform:uppercase; padding:.85rem 2rem;
+  border-radius:50px; transition:.25s ease; display:inline-block;
+}
+.btn-church-outline:hover{ background:#fff; color:var(--navy-900); }
+
+.topbar{ background-color:var(--navy-950); font-size:.8rem; padding:.5rem 0; color:#c7cdd8; }
+.topbar a{ color:#c7cdd8; }
+.topbar .social-icons a{
+  color:#fff; width:28px;height:28px; display:inline-flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.08); border-radius:50%; margin-left:.35rem; font-size:.8rem;
+}
+.topbar .social-icons a:hover{ background:var(--red-600); }
+
+.navbar-church{ background-color:var(--navy-900); padding:1rem 0; }
+.navbar-church .navbar-brand{ color:#fff; font-family:var(--font-heading); font-weight:700; font-size:1.4rem; }
+.navbar-church .nav-link{
+  color:#e3e6ec; font-family:var(--font-heading); font-weight:600; font-size:.78rem;
+  letter-spacing:1px; text-transform:uppercase; margin:0 .7rem; padding:.5rem 0 !important;
+}
+
+/* 1. Pertahankan warna teks menu induk saat diklik/hover */
+.navbar-church .nav-link:focus,
+.navbar-church .nav-link:hover,
+.navbar-church .show > .nav-link {
+    color: #ffffff !important; /* Atau warna merah #dc3545 jika sedang aktif */
+}
+
+/* 2. Mengubah background kotak dropdown menjadi biru gelap */
+.navbar-church .dropdown-menu {
+    background-color: #0d1b2a; /* Sesuaikan kode hex ini dengan warna biru gelap navbar Anda */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 3. Mengubah warna teks sub-menu menjadi putih */
+.navbar-church .dropdown-item {
+    color: #e0e0e0 !important;
+    padding: 8px 20px;
+    transition: all 0.2s ease;
+}
+
+/* 4. Efek HOVER pada item sub-menu (berubah jadi merah tema) */
+.navbar-church .dropdown-item:hover,
+.navbar-church .dropdown-item:focus {
+    background-color: #dc3545 !important; /* Warna merah aksen */
+    color: #ffffff !important;
+}
+
+.navbar-church.sticky-top{
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+.navbar-church .nav-link.active, .navbar-church .nav-link:hover{ color:var(--red-600); }
+
+.hero{
+  position:relative;
+  background:
+    radial-gradient(ellipse 900px 500px at 50% 0%, rgba(120,150,210,.18), transparent 60%),
+    linear-gradient(180deg, var(--navy-900) 0%, var(--navy-950) 100%);
+  overflow:hidden; padding-top:5.5rem; padding-bottom:0;
+}
+.hero::before{ content:""; position:absolute; top:90px; left:50%; transform:translateX(-50%); width:1px; height:130px; background:rgba(255,255,255,.18); }
+.hero::after{ content:""; position:absolute; top:150px; left:50%; transform:translateX(-50%); width:70px; height:1px; background:rgba(255,255,255,.18); }
+.hero .eyebrow{ color:var(--red-600); font-family:var(--font-heading); font-weight:700; font-size:.78rem; letter-spacing:2px; }
+.hero h1{ color:#fff; font-weight:700; font-size:2.75rem; line-height:1.25; }
+.hero p.lead{ color:var(--text-muted-light); font-size:.98rem; max-width:620px; }
+.hero-figure{ position:relative; margin-top:2rem; height:340px; display:flex; align-items:flex-end; justify-content:center; overflow:hidden; }
+.hero-figure svg{ height:100%; width:auto; opacity:.9; }
+.hero-dots{ position:absolute; bottom:28px; left:50%; transform:translateX(-50%); display:flex; gap:.4rem; z-index:2; }
+.hero-dots span{ width:7px;height:7px;border-radius:50%; background:rgba(255,255,255,.35); }
+.hero-dots span.active{ background:#fff; }
+
+.feature-block .icon-wrap{ width:56px;height:56px; display:flex;align-items:center;justify-content:center; color:var(--navy-900); font-size:1.6rem; margin-bottom:1rem; }
+.feature-block h5{ font-weight:700; font-size:1rem; letter-spacing:.5px; margin-bottom:.15rem; }
+.feature-block .feature-tag{ color:var(--red-600); font-size:.85rem; font-weight:600; }
+.feature-block hr{ width:34px; border-top:2px solid var(--red-600); margin:.75rem 0; opacity:1; }
+.feature-block p{ color:#6c7280; font-size:.9rem; }
+
+.highlight-box{ background-color:var(--red-600); color:#fff; padding:2.75rem 2.25rem; height:100%; }
+.highlight-box h3{ font-weight:700; font-size:1.5rem; line-height:1.35; }
+.highlight-box p{ color:rgba(255,255,255,.85); font-size:.92rem; margin-bottom:0; }
+
+.about-preview{ background:#f4f5f7; }
+.about-preview .eyebrow{ color:var(--red-600); font-family:var(--font-heading); font-weight:700; font-size:.78rem; letter-spacing:1.5px; }
+.church-illustration{ width:100%; height:100%; min-height:260px; background:linear-gradient(160deg,var(--navy-900),var(--navy-950)); display:flex;align-items:center;justify-content:center; }
+
+.section-eyebrow{ color:var(--red-600); font-family:var(--font-heading); font-weight:700; font-size:.78rem; letter-spacing:2px; }
+.section-title{ font-weight:700; font-size:2rem; }
+
+.church-card{ border:none; box-shadow:0 10px 30px rgba(10,20,40,.08); overflow:hidden; }
+.church-card .card-thumb{ height:200px; background:linear-gradient(135deg,var(--navy-800),var(--navy-950)); display:flex;align-items:center;justify-content:center; color:rgba(255,255,255,.5); font-size:2rem; }
+.church-card .card-meta{ font-size:.78rem; color:var(--red-600); font-weight:700; letter-spacing:.5px; text-transform:uppercase; }
+.church-card .card-title{ font-weight:700; font-size:1.05rem; }
+
+.event-item{ border-bottom:1px solid #e7e9ee; padding:1.25rem 0; }
+.event-date{ background:var(--navy-900); color:#fff; width:64px;height:64px; display:flex;flex-direction:column;align-items:center;justify-content:center; border-radius:6px; }
+.event-date .day{ font-weight:700; font-size:1.3rem; line-height:1; font-family:var(--font-heading); }
+.event-date .mon{ font-size:.65rem; letter-spacing:1px; text-transform:uppercase; }
+
+.footer{ background-color:var(--navy-950); color:#b7bfce; padding-top:4rem; }
+.footer h6{ color:#fff; font-weight:700; font-size:.9rem; letter-spacing:1px; text-transform:uppercase; margin-bottom:1.25rem; }
+.footer a{ color:#b7bfce; }
+.footer a:hover{ color:var(--red-600); }
+.footer .footer-bottom{ border-top:1px solid rgba(255,255,255,.08); margin-top:2.5rem; padding:1.25rem 0; font-size:.82rem; }
+
+.admin-sidebar{ background-color:var(--navy-950); min-height:100vh; color:#c7cdd8; }
+.admin-sidebar .brand{ color:#fff; font-family:var(--font-heading); font-weight:700; font-size:1.2rem; }
+.admin-sidebar .nav-link{ color:#b7bfce; font-size:.9rem; font-weight:600; border-radius:8px; padding:.6rem .9rem; }
+.admin-sidebar .nav-link.active, .admin-sidebar .nav-link:hover{ background-color:var(--red-600); color:#fff; }
+.admin-topbar{ background:#fff; border-bottom:1px solid #e7e9ee; }
+.stat-card{ border:none; border-radius:10px; box-shadow:0 6px 20px rgba(10,20,40,.06); }
+.stat-card .stat-icon{ width:48px;height:48px; border-radius:10px; display:flex;align-items:center;justify-content:center; font-size:1.3rem; }
+
+@media (max-width: 991.98px){
+  .navbar-church{
+    position: sticky; /* tetap, sudah dari .sticky-top */
+  }
+  .navbar-church .navbar-collapse{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--navy-900);
+    padding: 0.5rem 1.5rem 1.5rem;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    box-shadow: 0 12px 24px rgba(0,0,0,.3);
+    z-index: 1030;
+  }
+}
+
+/* ==========================================================================
+   ADMIN RESPONSIVE & SIDEBAR TOGGLE
+   ========================================================================== */
+
+/* Layout Wrapper Utama Admin */
+.admin-wrapper {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Sidebar Default Styling */
+.admin-sidebar {
+  width: 260px;
+  min-width: 260px;
+  background-color: var(--navy-950);
+  min-height: 100vh;
+  color: #c7cdd8;
+  transition: all 0.3s ease-in-out;
+  z-index: 1045;
+}
+
+/* Area Konten Utama */
+.admin-main-content {
+  flex-grow: 1;
+  min-width: 0; /* Mencegah overflow flexbox */
+  background-color: #f4f5f7;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Overlay Transparan untuk Ponsel ketika Sidebar Terbuka */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 18, 32, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 1040;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.show {
+  display: block;
+  opacity: 1;
+}
+
+/* --- Media Query untuk Layar Kecil / Mobile (Max-width: 991.98px) --- */
+@media (max-width: 991.98px) {
+  .admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px; /* Sembunyikan sidebar ke luar layar kiri */
+    height: 100%;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Status Aktif saat Toggle Diklik */
+  .admin-sidebar.show {
+    left: 0; /* Geser masuk ke tampilan */
+  }
+
+  .admin-topbar {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Mengatasi Dropdown terpotong di Navbar Mobile */
+@media (max-width: 991.98px) {
+    .navbar-church .navbar-collapse {
+      overflow: visible !important; /* Izinkan menu dropdown mengambang keluar */
+    }
+    
+    .navbar-church .dropdown-menu {
+      position: static !important; /* Membuat menu dropdown mendorong konten bawah alih-alih tertutup */
+      float: none;
+      width: 100%;
+      margin-top: 0.5rem;
+      background-color: rgba(255, 255, 255, 0.05) !important; /* Latar sedikit transparan agar menyatu */
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    .navbar-church .dropdown-item {
+      color: #e0e0e0 !important;
+      padding: 0.6rem 1.2rem;
+    }
+  }
+}

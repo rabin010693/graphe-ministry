@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= $title ?? 'Admin - Graphe Ministry' ?></title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Vendor & Custom -->
+    <link rel="stylesheet" href="<?= base_url('assets/vendor/bootstrap/css/bootstrap.min.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/vendor/bootstrap-icons/bootstrap-icons.min.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
+</head>
+<body class="bg-light">
+
+    <!-- Wrapper Utama Admin -->
+    <div class="admin-wrapper">
+        <!-- Overlay transparan untuk mobile saat sidebar terbuka -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Sidebar -->
+        <aside class="admin-sidebar p-3" id="adminSidebar">
+            <div class="d-flex align-items-center justify-content-between brand px-2 py-2 mb-2 fw-bold">
+                <div>GRAPHE <span class="text-danger">Admin</span></div>
+                <!-- Tombol Tutup Sidebar (Hanya Muncul di Mobile) -->
+                <button class="btn text-white d-lg-none p-0 fs-4" id="sidebarClose" aria-label="Tutup Sidebar">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+
+            <hr class="border border-danger border-2 opacity-75">
+            
+            <nav class="nav flex-column gap-1">
+                <?php 
+                    $uri = service('uri');
+                    $segment = $uri->getSegment(2);
+                    $role = session()->get('role');
+                ?>
+
+                <!-- Menu Postingan -->
+                <a class="nav-link <?= ($segment == 'posts' || $segment == 'dashboard') ? 'active' : '' ?>" href="<?= base_url('admin/posts') ?>">
+                    <i class="bi bi-file-earmark-text me-2"></i>Postingan
+                </a>
+
+                <a class="nav-link <?= ($segment == 'churches') ? 'active' : '' ?>" href="<?= base_url('admin/churches') ?>">
+                    <i class="bi bi-building me-2"></i>
+                    <span>Daftar Gereja GBIA</span>
+                </a>
+
+                <a class="nav-link <?= ($segment == 'panti-staff') ? 'active' : '' ?>" href="<?= base_url('admin/panti-staff') ?>">
+                    <i class="bi bi-person-workspace me-2"></i>Pengurus Panti
+                </a>
+
+                <a class="nav-link <?= ($segment == 'children') ? 'active' : '' ?>" href="<?= base_url('admin/children') ?>">
+                    <i class="bi bi-person-heart me-2"></i>Anak Asuh Panti
+                </a>
+                    
+                <!-- Menu upload Audio Khotbah -->
+                <a class="nav-link <?= ($segment == 'audios') ? 'active' : '' ?>" href="<?= base_url('admin/audios') ?>">
+                    <i class="bi bi-music-note-beamed me-2"></i>Audio Khotbah
+                </a>
+
+                <!-- ======================================================= -->
+                <!-- MENU BARU: Pedang Roh (Majalah/Buletin)                -->
+                <!-- ======================================================= -->
+                <a class="nav-link <?= ($segment == 'pedang-roh' || $segment == 'periodicals') ? 'active' : '' ?>" href="<?= base_url('admin/pedang-roh') ?>">
+                    <i class="bi bi-journal-bookmark me-2"></i>Pedang Roh
+                </a>
+                
+                <a class="nav-link <?= ($segment == 'galleries') ? 'active' : '' ?>" href="<?= base_url('admin/galleries') ?>">
+                    <i class="bi bi-images me-2"></i>Galeri Foto
+                </a>
+               
+                <a class="nav-link <?= ($segment == 'events') ? 'active' : '' ?>" href="<?= base_url('admin/events') ?>">
+                    <i class="bi bi-calendar-event me-2"></i>
+                    <span>Kalender Event</span>
+                </a>
+
+                <!-- Menu Pesan -->
+                <a class="nav-link <?= ($segment == 'contacts') ? 'active' : '' ?>" href="<?= base_url('admin/contacts') ?>">
+                    <i class="bi bi-envelope me-2"></i>Pesan Contact Us
+                </a>
+                
+                <!-- Menu Lihat Website -->
+                <a class="nav-link" href="<?= base_url('/') ?>" target="_blank">
+                    <i class="bi bi-eye me-2"></i>Lihat Website
+                </a>
+
+                <hr class="border border-danger border-2 opacity-75 my-2">
+                
+                <!-- Menu Khusus Admin Utama -->
+                <?php if ($role === 'admin'): ?>
+                    <a class="nav-link <?= ($segment == 'users') ? 'active' : '' ?>" href="<?= base_url('admin/users') ?>">
+                        <i class="bi bi-people me-2"></i>Kelola User
+                    </a>
+                <?php endif; ?>
+
+                <!-- Menu Logout -->
+                <a class="nav-link text-danger" href="<?= base_url('logout') ?>" id="logoutBtn">
+                    <i class="bi bi-box-arrow-right me-2"></i>Keluar
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Area -->
+        <main class="admin-main-content">
+            <!-- Topbar -->
+            <header class="admin-topbar px-3 px-lg-4 py-3 d-flex justify-content-between align-items-center bg-white border-bottom">
+                <div class="d-flex align-items-center gap-2 gap-lg-3">
+                    <!-- Tombol Toggle Hamburger (Terlihat di Mobile/Tablet) -->
+                    <button class="btn btn-outline-dark d-lg-none" id="sidebarToggle" aria-label="Buka Menu">
+                        <i class="bi bi-list fs-5"></i>
+                    </button>
+                    <h5 class="mb-0 fw-bold fs-6 fs-lg-5"><?= $header_title ?? 'Dashboard Admin' ?></h5>
+                </div>
+                
+                <!-- User Info -->
+                <div class="text-muted small d-flex align-items-center">
+                    <i class="bi bi-person-circle me-1 fs-5 fs-lg-6"></i>
+                    <span class="fw-semibold text-dark d-none d-sm-inline"><?= esc(session()->get('name') ?? 'Admin') ?></span> 
+                    <span class="badge <?= $role === 'admin' ? 'bg-danger-subtle text-danger' : 'bg-primary-subtle text-primary' ?> ms-1">
+                        <?= $role === 'admin' ? 'Admin Utama' : 'Penulis' ?>
+                    </span>
+                </div>
+            </header>
+
+            <!-- Content Section -->
+            <div class="p-3 p-lg-4">
+                <?= $this->renderSection('content') ?>
+            </div>
+        </main>
+    </div>
+
+    <!-- Vendor Scripts -->
+    <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Script Toggle Responsive Sidebar -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebar = document.getElementById('adminSidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            const toggleBtn = document.getElementById('sidebarToggle');
+            const closeBtn = document.getElementById('sidebarClose');
+
+            function openSidebar() {
+                sidebar.classList.add('show');
+                overlay.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeSidebar() {
+                sidebar.classList.remove('show');
+                overlay.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+
+            if (toggleBtn) toggleBtn.addEventListener('click', openSidebar);
+            if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+            if (overlay) overlay.addEventListener('click', closeSidebar);
+
+            // Tutup sidebar otomatis jika layar di-resize ke ukuran desktop (>= 992px)
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 992) {
+                    closeSidebar();
+                }
+            });
+        });
+    </script>
+
+    <?= $this->renderSection('scripts') ?>
+</body>
+</html>
