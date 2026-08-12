@@ -5,7 +5,7 @@ return [
         'welcome'     => 'WELCOME TO GBIA GRAPHE',
         'verse_text'  => '...jemaat dari Allah yang hidup, tiang penopang dan dasar kebenaran.',
         'verse_ref'   => '1 Tim. 3:15',
-        'cta_button'  => 'JOIN OUR SERVICE',
+        'cta_button'  => 'Bergabunglah Dengan Kami',
     ],
 
     'features' => [

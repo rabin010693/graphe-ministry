@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/style.min.css') ?>">
 
 </head>
-<body>
+<body style="overflow-x: hidden; width: 100%;">
 
     <!-- Topbar -->
     <div class="topbar">
@@ -157,7 +157,7 @@
     </nav>
 
     <!-- Main Content -->
-    <main>
+    <main style="overflow-x: hidden; width: 100%;">
         <?= $this->renderSection('content') ?>
     </main>
 
