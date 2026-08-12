@@ -5,9 +5,9 @@
 <!-- Hero Section -->
 <header class="hero bg-primary text-white py-5 position-relative overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('<?= base_url('assets/img/hero-bg.jpg') ?>') center/cover no-repeat;">
     <div class="container text-center py-5 position-relative">
-        <span class="badge bg-danger text-uppercase tracking-wider px-3 py-2 mb-3 fw-semibold"><?= lang('Gits.facilities.badge') ?></span>
-        <h1 class="display-5 fw-bold text-white mb-2"><?= lang('Gits.facilities.hero_title') ?></h1>
-        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;"><?= lang('Gits.facilities.hero_subtitle') ?></p>
+        <span class="badge bg-danger text-uppercase tracking-wider px-3 py-2 mb-3 fw-semibold" data-aos="fade-down"><?= lang('Gits.facilities.badge') ?></span>
+        <h1 class="display-5 fw-bold text-white mb-2" data-aos="fade-down" data-aos-delay="100"><?= lang('Gits.facilities.hero_title') ?></h1>
+        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;" data-aos="fade-down" data-aos-delay="200"><?= lang('Gits.facilities.hero_subtitle') ?></p>
     </div>
 </header>
 
@@ -16,7 +16,7 @@
     <div class="container">
         <!-- Intro Card -->
         <div class="row justify-content-center mb-5">
-            <div class="col-lg-12">
+            <div class="col-lg-12" data-aos="fade-up">
                 <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white text-center">
                     <h3 class="fw-bold text-danger mb-3"><?= lang('Gits.facilities.intro_title') ?></h3>
                     <p class="text-secondary mb-0" style="line-height: 1.8;">
@@ -32,7 +32,7 @@
                 <div class="row g-4">
 
                     <!-- 1. Dosen Berkualitas -->
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4 transition-hover">
                             <div class="d-flex align-items-center mb-3">
                                 <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 50px; height: 50px;">
@@ -47,7 +47,7 @@
                     </div>
 
                     <!-- 2. Gedung Kampus & Ruang Kelas -->
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4 transition-hover">
                             <div class="d-flex align-items-center mb-3">
                                 <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 50px; height: 50px;">
@@ -62,7 +62,7 @@
                     </div>
 
                     <!-- 3. Perpustakaan -->
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4 transition-hover">
                             <div class="d-flex align-items-center mb-3">
                                 <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 50px; height: 50px;">
@@ -77,7 +77,7 @@
                     </div>
 
                     <!-- 4. Komputer & Internet -->
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4 transition-hover">
                             <div class="d-flex align-items-center mb-3">
                                 <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 50px; height: 50px;">
@@ -92,7 +92,7 @@
                     </div>
 
                     <!-- 5. Dapur & Ruang Makan -->
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4 transition-hover">
                             <div class="d-flex align-items-center mb-3">
                                 <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 50px; height: 50px;">
@@ -107,7 +107,7 @@
                     </div>
 
                     <!-- 6. Stasiun Radio RBK -->
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4 transition-hover">
                             <div class="d-flex align-items-center mb-3">
                                 <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 50px; height: 50px;">
@@ -122,7 +122,7 @@
                     </div>
 
                     <!-- 7. Asrama Mahasiswa (Full Width) -->
-                    <div class="col-12">
+                    <div class="col-12" data-aos="fade-up" data-aos-delay="700">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4 bg-dark text-white">
                             <div class="row align-items-center">
                                 <div class="col-md-8">

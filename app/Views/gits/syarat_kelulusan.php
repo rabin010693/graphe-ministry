@@ -5,9 +5,9 @@
 <!-- Hero Section -->
 <header class="hero bg-primary text-white py-5 position-relative overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('<?= base_url('assets/img/hero-bg.jpg') ?>') center/cover no-repeat;">
     <div class="container text-center py-5 position-relative">
-        <span class="badge bg-danger text-uppercase tracking-wider px-3 py-2 mb-3 fw-semibold"><?= lang('Gits.graduation.badge') ?></span>
-        <h1 class="display-5 fw-bold text-white mb-2"><?= lang('Gits.graduation.hero_title') ?></h1>
-        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;"><?= lang('Gits.graduation.hero_subtitle') ?></p>
+        <span class="badge bg-danger text-uppercase tracking-wider px-3 py-2 mb-3 fw-semibold" data-aos="fade-down"><?= lang('Gits.graduation.badge') ?></span>
+        <h1 class="display-5 fw-bold text-white mb-2" data-aos="fade-down" data-aos-delay="100"><?= lang('Gits.graduation.hero_title') ?></h1>
+        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;" data-aos="fade-down" data-aos-delay="200"><?= lang('Gits.graduation.hero_subtitle') ?></p>
     </div>
 </header>
 
@@ -15,11 +15,11 @@
 <section class="py-5 bg-light">
     <div class="container">
         <!-- Pengantar Card -->
-        <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card border-0 shadow-sm rounded-4 mb-4" data-aos="fade-up">
             <div class="card-body p-4 p-md-5 text-center">
-                <i class="fas fa-graduation-cap text-primary fs-2 mb-3"></i>
-                <h3 class="fw-bold text-dark mb-2"><?= lang('Gits.graduation.intro_title') ?></h3>
-                <p class="text-muted mb-0 mx-auto" style="max-width: 700px;">
+                <i class="fas fa-graduation-cap text-primary fs-2 mb-3" data-aos="fade-up" data-aos-delay="100"></i>
+                <h3 class="fw-bold text-dark mb-2" data-aos="fade-up" data-aos-delay="150"><?= lang('Gits.graduation.intro_title') ?></h3>
+                <p class="text-muted mb-0 mx-auto" style="max-width: 700px;" data-aos="fade-up" data-aos-delay="200">
                     <?= lang('Gits.graduation.intro_desc') ?>
                 </p>
             </div>
@@ -27,7 +27,7 @@
 
         <!-- Bagian 1: Program Foundation -->
         <div class="mb-5">
-            <div class="d-flex align-items-center mb-4">
+            <div class="d-flex align-items-center mb-4" data-aos="fade-up">
                 <div class="bg-primary text-white rounded-circle p-2 me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
                     <i class="fas fa-seedling"></i>
                 </div>
@@ -39,7 +39,7 @@
 
             <div class="row g-4">
                 <!-- Certificate of Theology -->
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="card border-0 shadow-sm rounded-4 h-100">
                         <div class="card-body p-4">
                             <span class="badge bg-secondary bg-opacity-10 text-dark mb-2 px-3 py-1 fw-semibold">36 SKS</span>
@@ -53,7 +53,7 @@
                 </div>
 
                 <!-- Associate of Theology -->
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="150">
                     <div class="card border-0 shadow-sm rounded-4 h-100">
                         <div class="card-body p-4">
                             <span class="badge bg-secondary bg-opacity-10 text-dark mb-2 px-3 py-1 fw-semibold">72 SKS</span>
@@ -67,7 +67,7 @@
                 </div>
 
                 <!-- Disciple of Theology -->
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="card border-0 shadow-sm rounded-4 h-100">
                         <div class="card-body p-4">
                             <span class="badge bg-secondary bg-opacity-10 text-dark mb-2 px-3 py-1 fw-semibold">108 SKS</span>
@@ -85,7 +85,7 @@
                 </div>
 
                 <!-- Scholar of Biblical Study -->
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="250">
                     <div class="card border-0 shadow-sm rounded-4 h-100">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -109,7 +109,7 @@
                 </div>
 
                 <!-- Scholar of Biblical Theology -->
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="300">
                     <div class="card border-0 shadow-sm rounded-4 h-100">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -144,7 +144,7 @@
 
         <!-- Bagian 2: Program Advanced -->
         <div class="mb-4">
-            <div class="d-flex align-items-center mb-4">
+            <div class="d-flex align-items-center mb-4" data-aos="fade-up">
                 <div class="bg-success text-white rounded-circle p-2 me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
                     <i class="fas fa-graduation-cap fa-lg"></i>
                 </div>
@@ -156,7 +156,7 @@
 
             <div class="row g-4">
                 <!-- Maestro of Ministry -->
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="card border-0 shadow-sm rounded-4 h-100">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -179,7 +179,7 @@
                 </div>
 
                 <!-- Maestro of Biblical Study -->
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="150">
                     <div class="card border-0 shadow-sm rounded-4 h-100">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -202,7 +202,7 @@
                 </div>
 
                 <!-- Maestro of Divinity -->
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="card border-0 shadow-sm rounded-4 h-100">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -226,7 +226,7 @@
                 </div>
 
                 <!-- Maestro of Theology -->
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="250">
                     <div class="card border-0 shadow-sm rounded-4 h-100">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -249,7 +249,7 @@
                 </div>
 
                 <!-- Didaskalos of Ministry -->
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="card border-0 shadow-sm rounded-4 h-100">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -268,7 +268,7 @@
                 </div>
 
                 <!-- Didaskalos of Theology -->
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="350">
                     <div class="card border-0 shadow-sm rounded-4 h-100">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -285,17 +285,16 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
         <!-- Catatan Kaki -->
-        <div class="alert alert-warning border-0 bg-opacity-10 text-dark p-3 rounded-3 small mb-5 text-center">
+        <div class="alert alert-warning border-0 bg-opacity-10 text-dark p-3 rounded-3 small mb-5 text-center" data-aos="fade-up">
             <i class="fas fa-info-circle text-warning me-2"></i> <em><?= lang('Gits.graduation.footnote') ?></em>
         </div>
 
         <!-- Call to Action Footer -->
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" data-aos="fade-up">
             <div class="col-lg-10 text-center">
                 <div class="p-4 bg-white rounded-4 shadow-sm border">
                     <p class="mb-3 text-secondary"><?= lang('Gits.graduation.cta_text') ?></p>

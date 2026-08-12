@@ -5,9 +5,9 @@
 <!-- Hero Section -->
 <header class="hero bg-primary text-white py-5 position-relative overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('<?= base_url('assets/img/hero-bg.jpg') ?>') center/cover no-repeat;">
     <div class="container text-center py-5 position-relative">
-        <span class="badge bg-danger text-uppercase tracking-wider px-3 py-2 mb-3 fw-semibold"><?= lang('Gits.seminar.badge') ?></span>
-        <h1 class="display-5 fw-bold text-white mb-2"><?= lang('Gits.seminar.hero_title') ?></h1>
-        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;"><?= lang('Gits.seminar.hero_subtitle') ?></p>
+        <span class="badge bg-danger text-uppercase tracking-wider px-3 py-2 mb-3 fw-semibold" data-aos="fade-down"><?= lang('Gits.seminar.badge') ?></span>
+        <h1 class="display-5 fw-bold text-white mb-2" data-aos="fade-down" data-aos-delay="100"><?= lang('Gits.seminar.hero_title') ?></h1>
+        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;" data-aos="fade-down" data-aos-delay="200"><?= lang('Gits.seminar.hero_subtitle') ?></p>
     </div>
 </header>
 
@@ -15,7 +15,7 @@
 <section class="py-5 bg-light">
     <div class="container">
         <!-- Intro Card -->
-        <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card border-0 shadow-sm rounded-4 mb-4" data-aos="fade-up">
             <div class="card-body p-4 p-md-5">
                 <h3 class="fw-bold text-dark mb-4 border-bottom pb-3">
                     <i class="fas fa-chalkboard-teacher text-danger me-2"></i> <?= lang('Gits.seminar.about_title') ?>
@@ -34,7 +34,7 @@
                 </p>
 
                 <!-- Call to Action Undangan Seminar -->
-                <div class="p-4 bg-light rounded-3 border-start border-primary border-4 mb-4">
+                <div class="p-4 bg-light rounded-3 border-start border-primary border-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <h5 class="fw-bold text-dark mb-2">
                         <i class="fas fa-envelope-open-text text-primary me-2"></i> <?= lang('Gits.seminar.invite_title') ?>
                     </h5>
@@ -47,18 +47,18 @@
                 </div>
 
                 <!-- Topik Khusus Tahun Ini -->
-                <h5 class="fw-bold text-dark mb-3"><?= lang('Gits.seminar.topics_title') ?></h5>
-                <p class="text-muted mb-3">
+                <h5 class="fw-bold text-dark mb-3" data-aos="fade-up" data-aos-delay="150"><?= lang('Gits.seminar.topics_title') ?></h5>
+                <p class="text-muted mb-3" data-aos="fade-up" data-aos-delay="200">
                     <?= lang('Gits.seminar.topics_subtitle') ?>
                 </p>
                 <div class="row g-3 mb-0">
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="250">
                         <div class="p-3 bg-white border rounded-3 h-100 shadow-sm">
                             <h6 class="fw-bold text-danger mb-1"><i class="fas fa-book me-2"></i> <?= lang('Gits.seminar.topic_allah_title') ?></h6>
                             <p class="text-muted small mb-0"><?= lang('Gits.seminar.topic_allah_desc') ?></p>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="350">
                         <div class="p-3 bg-white border rounded-3 h-100 shadow-sm">
                             <h6 class="fw-bold text-danger mb-1"><i class="fas fa-music me-2"></i> <?= lang('Gits.seminar.topic_music_title') ?></h6>
                             <p class="text-muted small mb-0"><?= lang('Gits.seminar.topic_music_desc') ?></p>
@@ -70,7 +70,7 @@
         </div>
 
         <!-- Upcoming Schedule Table Card -->
-        <div class="card border-0 shadow-sm rounded-4">
+        <div class="card border-0 shadow-sm rounded-4" data-aos="fade-up" data-aos-delay="200">
             <div class="card-body p-4 p-md-5">
                 <div class="d-flex align-items-center mb-4 border-bottom pb-3">
                     <i class="fas fa-calendar-alt text-danger fs-3 me-3"></i>

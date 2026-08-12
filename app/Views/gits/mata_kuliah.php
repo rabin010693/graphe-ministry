@@ -5,9 +5,9 @@
 <!-- Hero Section -->
 <header class="hero bg-primary text-white py-5 position-relative overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('<?= base_url('assets/img/hero-bg.jpg') ?>') center/cover no-repeat;">
     <div class="container text-center py-5 position-relative">
-        <span class="badge bg-danger text-uppercase tracking-wider px-3 py-2 mb-3 fw-semibold"><?= lang('Gits.courses.badge') ?></span>
-        <h1 class="display-5 fw-bold text-white mb-2"><?= lang('Gits.courses.hero_title') ?></h1>
-        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;"><?= lang('Gits.courses.hero_subtitle') ?></p>
+        <span class="badge bg-danger text-uppercase tracking-wider px-3 py-2 mb-3 fw-semibold" data-aos="fade-down"><?= lang('Gits.courses.badge') ?></span>
+        <h1 class="display-5 fw-bold text-white mb-2" data-aos="fade-down" data-aos-delay="100"><?= lang('Gits.courses.hero_title') ?></h1>
+        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;" data-aos="fade-down" data-aos-delay="200"><?= lang('Gits.courses.hero_subtitle') ?></p>
     </div>
 </header>
 
@@ -15,7 +15,7 @@
 <section class="py-5 bg-light">
     <div class="container">
 
-        <div class="text-center mb-4">
+        <div class="text-center mb-4" data-aos="fade-up">
             <h2 class="fw-bold text-dark mb-2"><?= lang('Gits.courses.section_title') ?></h2>
             <p class="text-muted"><?= lang('Gits.courses.section_subtitle') ?></p>
             <div class="divider mx-auto bg-danger mt-2" style="width: 50px; height: 3px;"></div>
@@ -148,7 +148,7 @@
         ?>
 
         <!-- Filter & Search Bar -->
-        <div class="row justify-content-between align-items-center mb-4 g-3">
+        <div class="row justify-content-between align-items-center mb-4 g-3" data-aos="fade-up" data-aos-delay="100">
             <div class="col-md-6 col-lg-4">
                 <div class="input-group shadow-sm rounded-3">
                     <span class="input-group-text bg-white border-end-0 text-muted ps-3">
@@ -169,8 +169,8 @@
 
         <!-- Container Card Per Kategori -->
         <div id="kurikulumContainer">
-            <?php foreach ($kurikulum as $kategori => $matkulList): ?>
-                <div class="card border-0 shadow-sm rounded-4 mb-4 overflow-hidden category-card">
+            <?php $delay = 150; foreach ($kurikulum as $kategori => $matkulList): ?>
+                <div class="card border-0 shadow-sm rounded-4 mb-4 overflow-hidden category-card" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
                     <div class="card-header bg-white border-bottom py-3 px-4">
                         <h4 class="fw-bold text-dark m-0 d-flex align-items-center">
                             <i class="bi bi-journal-bookmark-fill text-danger me-2"></i>
@@ -207,7 +207,7 @@
                         </div>
                     </div>
                 </div>
-            <?php endforeach; ?>
+            <?php $delay += 50; endforeach; ?>
         </div>
 
         <!-- State ketika pencarian tidak ditemukan -->
