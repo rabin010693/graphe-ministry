@@ -15,8 +15,8 @@
     <!-- CSS Vendor & Custom -->
     <link rel="stylesheet" href="<?= base_url('assets/vendor/bootstrap/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/vendor/bootstrap-icons/bootstrap-icons.min.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css/custom.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.min.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/custom.min.css') ?>">
 </head>
 
 <body class="bg-light">
@@ -117,8 +117,8 @@
             <header class="admin-topbar px-3 px-lg-4 py-3 d-flex justify-content-between align-items-center bg-white border-bottom">
                 <div class="d-flex align-items-center gap-2 gap-lg-3">
                     <!-- Tombol Toggle Hamburger (Terlihat di Mobile/Tablet) -->
-                    <button class="btn btn-outline-dark d-lg-none" id="sidebarToggle" aria-label="Buka Menu">
-                        <i class="bi bi-list fs-5"></i>
+                    <button class="btn btn-outline-dark btn-sm d-lg-none" id="sidebarToggle" aria-label="Buka Menu">
+                        <i class="bi bi-list fs-6"></i>
                     </button>
                     <h5 class="mb-0 fw-bold fs-6 fs-lg-5"><?= $header_title ?? 'Dashboard Admin' ?></h5>
                 </div>
