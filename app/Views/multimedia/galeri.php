@@ -2,6 +2,7 @@
 
 <?= $this->section('content') ?>
 
+
 <!-- Hero Section -->
 <header class="hero pb-5">
     <div class="container text-center pt-5 pb-5">
@@ -12,11 +13,11 @@
 </header>
 
 <!-- Main Gallery Section -->
-<section class="py-5 bg-light">
-    <div class="container">
+<section class="ftco-section ftco-no-pb py-5">
+    <div class="container-fluid px-md-0">
         
         <!-- Filter Kategori Tombol Pill -->
-        <div class="d-flex justify-content-center flex-wrap gap-2 mb-5" data-aos="fade-up">
+        <div class="d-flex justify-content-center flex-wrap gap-2 mb-5 px-3" data-aos="fade-up">
             <button class="btn btn-dark rounded-pill px-4 filter-btn active" onclick="filterGallery('all', this)"><?= lang('Multimedia.gallery.categories.all') ?></button>
             <button class="btn btn-outline-dark rounded-pill px-4 filter-btn" onclick="filterGallery('Kebaktian Umum', this)"><?= lang('Multimedia.gallery.categories.general') ?></button>
             <button class="btn btn-outline-dark rounded-pill px-4 filter-btn" onclick="filterGallery('Pemuda & Remaja', this)"><?= lang('Multimedia.gallery.categories.youth') ?></button>
@@ -24,24 +25,12 @@
             <button class="btn btn-outline-dark rounded-pill px-4 filter-btn" onclick="filterGallery('Kegiatan Sosial', this)"><?= lang('Multimedia.gallery.categories.social') ?></button>
         </div>
 
-        <!-- Card Grid Galeri -->
-        <div class="row g-4" id="galleryContainer">
+        <!-- Gallery Grid (Murni Gambar & Overlay seperti Expected) -->
+        <div class="row g-0" id="galleryContainer">
             <?php if (!empty($galleries)): ?>
-                <?php 
-                    // Formatter tanggal sesuai locale aktif ('id' / 'en')
-                    $currentLocale = service('request')->getLocale();
-                    $dateFormatter = new \IntlDateFormatter(
-                        $currentLocale,
-                        \IntlDateFormatter::LONG,
-                        \IntlDateFormatter::NONE
-                    );
-                ?>
                 <?php 
                 $delay = 100;
                 foreach ($galleries as $item): 
-                    $time = strtotime($item['event_date']);
-                    $formattedDate = $dateFormatter->format($time);
-
                     // Pilihan Warna Badge Kategori & Label Terjemahan Badge
                     $badgeColor = 'bg-primary';
                     $categoryLabel = $item['category'];
@@ -60,28 +49,27 @@
                         $categoryLabel = lang('Multimedia.gallery.categories.social');
                     }
                 ?>
-                    <div class="col-12 col-md-4 gallery-card-item" data-category="<?= esc($item['category']) ?>" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
-                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative">
-                            <!-- Badge Kategori -->
-                            <span class="position-absolute top-0 end-0 m-3 badge rounded-pill <?= $badgeColor ?> px-3 py-2 z-1">
+                    <div class="col-md-3 col-sm-6 col-12 gallery-card-item" data-category="<?= esc($item['category']) ?>">
+                        <a href="<?= base_url('uploads/galeri/' . $item['image']) ?>" 
+                           class="glightbox img gallery position-relative d-block overflow-hidden" 
+                           data-gallery="gallery" 
+                           data-aos="fade-up" 
+                           data-aos-delay="<?= $delay ?>"
+                           style="height: 300px; background: url('<?= base_url('uploads/galeri/' . $item['image']) ?>') center/cover no-repeat;">
+                            
+                            <!-- Badge Kategori di dalam Item Gallery -->
+                            <span class="position-absolute top-0 end-0 m-3 badge rounded-pill <?= $badgeColor ?> px-3 py-2 z-2 shadow">
                                 <?= esc($categoryLabel) ?>
                             </span>
 
-                            <!-- Gambar Momen -->
-                            <img src="<?= base_url('uploads/galeri/' . $item['image']) ?>" 
-                                 class="card-img-top object-fit-cover" 
-                                 alt="<?= esc($item['title']) ?>" 
-                                 style="height: 240px;">
+                            <!-- Overlay Gelap saat kursor diarahkan (Hover) -->
+                            <span class="overlay"></span>
 
-                            <!-- Isi Konten Card -->
-                            <div class="card-body p-4 d-flex flex-column">
-                                <div class="text-muted small mb-2">
-                                    <i class="bi bi-calendar-event me-1"></i><?= $formattedDate ?>
-                                </div>
-                                <h5 class="card-title fw-bold text-dark mb-2 fs-6"><?= esc($item['title']) ?></h5>
-                                <p class="card-text text-muted small flex-grow-1 mb-0"><?= esc($item['description']) ?></p>
+                            <!-- Judul Foto saat Hover -->
+                            <div class="gallery-title-overlay position-absolute bottom-0 start-0 w-100 p-3 text-white z-2">
+                                <h6 class="fw-bold mb-0 text-truncate"><?= esc($item['title']) ?></h6>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 <?php 
                     if ($delay < 400) {
@@ -99,6 +87,34 @@
 
     </div>
 </section>
+
+<!-- CSS Pendukung untuk Efek Hover & Overlay -->
+<style>
+.gallery {
+    position: relative;
+    transition: all 0.3s ease;
+}
+.gallery .overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.gallery:hover .overlay {
+    opacity: 1;
+}
+.gallery .gallery-title-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+.gallery:hover .gallery-title-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
 
 <!-- Filter Script -->
 <script>
