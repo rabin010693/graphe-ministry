@@ -212,24 +212,11 @@
     modal.show();
   }
 
-  // --- PREVENSI DOUBLE SUBMIT & AJAX SUBMISSION ---
   document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('#churchModal form');
-    const submitBtn = form.querySelector('button[type="submit"]');
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-
-      // 1. Kunci tombol agar tidak bisa diklik ulang & tampilkan indikator loading
-      submitBtn.disabled = true;
-      const originalBtnText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span> Menyimpan...';
-
-      // Helper function untuk mengembalikan tombol jika penyimpanan gagal
-      function restoreButton() {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
-      }
 
       const formData = new FormData(form);
       const xhr = new XMLHttpRequest();
@@ -241,7 +228,6 @@
         try {
           response = JSON.parse(xhr.responseText);
         } catch (e) {
-          restoreButton(); // Pulihkan tombol jika format respon JSON gagal diparse
           Swal.fire({
             icon: 'error',
             title: 'Gagal Menyimpan!',
@@ -250,7 +236,6 @@
           return;
         }
 
-        // Perbarui CSRF Token jika dikirimkan oleh backend
         if (response.tokenName && response.tokenHash) {
           const csrfInput = form.querySelector(`input[name="${response.tokenName}"]`);
           if (csrfInput) csrfInput.value = response.tokenHash;
@@ -267,23 +252,12 @@
             location.reload();
           });
         } else {
-          restoreButton(); // Pulihkan tombol jika validasi / proses simpan gagal
           Swal.fire({
             icon: 'error',
             title: 'Gagal!',
             text: response.message || 'Terjadi kesalahan.',
           });
         }
-      };
-
-      // Pulihkan tombol jika terjadi kendala jaringan
-      xhr.onerror = function () {
-        restoreButton();
-        Swal.fire({
-          icon: 'error',
-          title: 'Koneksi Gagal',
-          text: 'Periksa koneksi internet Anda.',
-        });
       };
 
       xhr.send(formData);
