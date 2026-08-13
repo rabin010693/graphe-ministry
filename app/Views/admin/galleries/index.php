@@ -207,17 +207,31 @@
     modal.show();
   }
 
+  // --- PREVENSI DOUBLE SUBMIT & AJAX UPLOAD GALERI ---
   document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('#galleryModal form');
+    const submitBtn = form.querySelector('button[type="submit"]');
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      // 1. Kunci tombol simpan & tampilkan indikator loading
+      submitBtn.disabled = true;
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span> Mengunggah...';
+
+      // Helper function untuk mengembalikan kondisi tombol jika proses gagal
+      function restoreButton() {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      }
 
       const formData = new FormData(form);
       const xhr = new XMLHttpRequest();
       xhr.open('POST', form.action, true);
       xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
+      // Tampilkan popup SweetAlert loading
       Swal.fire({
         title: 'Sedang Mengunggah Gambar...',
         allowOutsideClick: false,
@@ -232,6 +246,7 @@
         try {
           response = JSON.parse(xhr.responseText);
         } catch (e) {
+          restoreButton(); // Pulihkan tombol jika JSON error
           Swal.fire({
             icon: 'error',
             title: 'Gagal Menyimpan!',
@@ -240,6 +255,7 @@
           return;
         }
 
+        // Perbarui token CSRF jika dikirim oleh server
         if (response.tokenName && response.tokenHash) {
           const csrfInput = form.querySelector(`input[name="${response.tokenName}"]`);
           if (csrfInput) csrfInput.value = response.tokenHash;
@@ -256,12 +272,23 @@
             location.reload();
           });
         } else {
+          restoreButton(); // Pulihkan tombol jika upload/validasi gagal
           Swal.fire({
             icon: 'error',
             title: 'Gagal Upload!',
             text: response.message || 'Terjadi kesalahan.',
           });
         }
+      };
+
+      // Pulihkan tombol jika ada masalah jaringan
+      xhr.onerror = function () {
+        restoreButton();
+        Swal.fire({
+          icon: 'error',
+          title: 'Koneksi Gagal',
+          text: 'Periksa koneksi internet Anda.',
+        });
       };
 
       xhr.send(formData);

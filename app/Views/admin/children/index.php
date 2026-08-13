@@ -194,5 +194,28 @@
     var modal = new bootstrap.Modal(document.getElementById('childModal'));
     modal.show();
   }
+
+  // --- PREVENSI DOUBLE SUBMIT ---
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('#childModal form');
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', function () {
+      // 1. Matikan tombol agar tidak bisa diklik ulang
+      submitBtn.disabled = true;
+
+      // 2. Tampilkan indikator loading pada tombol
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span> Menyimpan...';
+
+      // Safety timeout: kembalikan tombol jika pengiriman tertahan lebih dari 10 detik
+      setTimeout(function() {
+        if (submitBtn.disabled) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+        }
+      }, 10000);
+    });
+  });
 </script>
 <?= $this->endSection() ?>

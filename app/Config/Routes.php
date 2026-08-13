@@ -17,6 +17,7 @@ use App\Controllers\Admin\Events;
 use App\Controllers\Admin\Churches;
 use App\Controllers\Admin\PedangRohController; // <-- Import PedangRohController
 use App\Controllers\Language;
+use App\Controllers\Admin\ArticleController;
 
 /** @var RouteCollection $routes */
 
@@ -148,6 +149,11 @@ $routes->group('admin', ['filter' => 'adminAuth'], function ($routes) {
     $routes->get('pedang-roh', [PedangRohController::class, 'index']);
     $routes->post('pedang-roh/save', [PedangRohController::class, 'save']);
     $routes->get('pedang-roh/delete/(:num)', [PedangRohController::class, 'delete']);
+
+    // CRUD Artikel & Literatur (Buku, Traktat, Artikel)
+    $routes->get('articles', [ArticleController::class, 'index']);
+    $routes->post('articles/save', [ArticleController::class, 'save']);
+    $routes->get('articles/delete/(:num)', [ArticleController::class, 'delete']);
 
     // Khusus Admin Utama (Dilindungi Filter adminOnly)
     $routes->group('', ['filter' => 'adminOnly'], function ($routes) {

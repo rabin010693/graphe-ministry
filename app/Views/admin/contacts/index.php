@@ -216,5 +216,30 @@
       });
     }
   }
+
+  // --- PREVENSI DOUBLE SUBMIT PADA BALAS PESAN ---
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('#contactModal form');
+    if (!form) return;
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', function () {
+      // 1. Kunci tombol balasan agar tidak bisa diklik 2x
+      submitBtn.disabled = true;
+
+      // 2. Ubah indikator teks tombol menjadi status pengiriman
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span> Mengirim Balasan...';
+
+      // 3. Pengaman (Safety Timeout) jika terjadi kendala pengiriman email / jaringan tertahan
+      setTimeout(function () {
+        if (submitBtn.disabled) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+        }
+      }, 10000); // Otomatis pulih dalam 10 detik jika tidak ada reload halaman
+    });
+  });
 </script>
 <?= $this->endSection() ?>

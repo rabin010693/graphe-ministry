@@ -253,12 +253,24 @@
     modal.show();
   }
 
-  // --- IMPLEMENTASI AJAX & SWEETALERT PROGRESS UPLOAD ---
+  // --- IMPLEMENTASI AJAX, PREVENSI DOUBLE SUBMIT & SWEETALERT PROGRESS UPLOAD ---
   document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('#audioModal form');
+    const submitBtn = form.querySelector('button[type="submit"]');
 
     form.addEventListener('submit', function (e) {
       e.preventDefault(); // Mencegah submit form biasa
+
+      // 1. Kunci tombol simpan agar tidak bisa diklik 2x
+      submitBtn.disabled = true;
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span> Memproses...';
+
+      // Helper function untuk mengaktifkan kembali tombol jika proses gagal/batal
+      function restoreButton() {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      }
 
       const formData = new FormData(form);
       const xhr = new XMLHttpRequest();
@@ -315,6 +327,8 @@
             location.reload();
           });
         } else {
+          // Jika gagal simpan/validasi, aktifkan kembali tombolnya
+          restoreButton();
           Swal.fire({
             icon: 'error',
             title: 'Gagal Menyimpan!',
@@ -325,6 +339,8 @@
 
       // Jika terjadi error jaringan
       xhr.onerror = function () {
+        // Aktifkan kembali tombol jika koneksi bermasalah
+        restoreButton();
         Swal.fire({
           icon: 'error',
           title: 'Koneksi Gagal',

@@ -237,5 +237,30 @@
     var modal = new bootstrap.Modal(document.getElementById('deleteUserModal'));
     modal.show();
   }
+
+  // --- PREVENSI DOUBLE SUBMIT FORM USER ---
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('#userModal form');
+    if (!form) return;
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', function () {
+      // 1. Kunci tombol simpan agar tidak bisa diklik 2x
+      submitBtn.disabled = true;
+
+      // 2. Ubah indikator teks tombol menjadi status pengiriman
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span> Menyimpan...';
+
+      // 3. Safety Timeout jika proses submit/jaringan terhenti
+      setTimeout(function () {
+        if (submitBtn.disabled) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+        }
+      }, 10000); // Otomatis pulih dalam 10 detik jika tidak terjadi reload
+    });
+  });
 </script>
 <?= $this->endSection() ?>

@@ -9,11 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     
+    <!-- DataTables CSS (Bootstrap 5 Theme) -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+    
     <!-- CSS Vendor & Custom -->
     <link rel="stylesheet" href="<?= base_url('assets/vendor/bootstrap/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/vendor/bootstrap-icons/bootstrap-icons.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/custom.css') ?>">
 </head>
+
 <body class="bg-light">
 
     <!-- Wrapper Utama Admin -->
@@ -63,11 +68,12 @@
                     <i class="bi bi-music-note-beamed me-2"></i>Audio Khotbah
                 </a>
 
-                <!-- ======================================================= -->
-                <!-- MENU BARU: Pedang Roh (Majalah/Buletin)                -->
-                <!-- ======================================================= -->
                 <a class="nav-link <?= ($segment == 'pedang-roh' || $segment == 'periodicals') ? 'active' : '' ?>" href="<?= base_url('admin/pedang-roh') ?>">
                     <i class="bi bi-journal-bookmark me-2"></i>Pedang Roh
+                </a>
+
+                <a class="nav-link <?= ($segment == 'articles' || $segment == 'article') ? 'active' : '' ?>" href="<?= base_url('admin/articles') ?>">
+                    <i class="bi bi-journal-bookmark me-2"></i>Artikel
                 </a>
                 
                 <a class="nav-link <?= ($segment == 'galleries') ? 'active' : '' ?>" href="<?= base_url('admin/galleries') ?>">
@@ -138,9 +144,15 @@
     <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!-- Script Toggle Responsive Sidebar -->
+    <!-- jQuery & DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+
+    <!-- Main Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // 1. Script Toggle Responsive Sidebar
             const sidebar = document.getElementById('adminSidebar');
             const overlay = document.getElementById('sidebarOverlay');
             const toggleBtn = document.getElementById('sidebarToggle');
@@ -162,12 +174,38 @@
             if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
             if (overlay) overlay.addEventListener('click', closeSidebar);
 
-            // Tutup sidebar otomatis jika layar di-resize ke ukuran desktop (>= 992px)
             window.addEventListener('resize', function () {
                 if (window.innerWidth >= 992) {
                     closeSidebar();
                 }
             });
+
+            // 2. Script Inisialisasi DataTables Otomatis
+            if (window.jQuery && $.fn.DataTable) {
+                $('.table-responsive table, table.datatable').each(function () {
+                    if (!$.fn.DataTable.isDataTable(this)) {
+                        $(this).DataTable({
+                            "language": {
+                                "search": "Cari Data:",
+                                "lengthMenu": "Tampilkan _MENU_ Data",
+                                "zeroRecords": "Data tidak ditemukan",
+                                "info": "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+                                "infoEmpty": "Menampilkan 0 data",
+                                "infoFiltered": "(disaring dari _MAX_ total data)",
+                                "paginate": {
+                                    "first": "Pertama",
+                                    "last": "Terakhir",
+                                    "next": "Selanjutnya",
+                                    "previous": "Sebelumnya"
+                                }
+                            },
+                            "pageLength": 10,
+                            "responsive": true,
+                            "autoWidth": false
+                        });
+                    }
+                });
+            }
         });
     </script>
 

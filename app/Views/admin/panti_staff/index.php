@@ -176,5 +176,28 @@
     var modal = new bootstrap.Modal(document.getElementById('staffModal'));
     modal.show();
   }
+
+  // Pencegahan Double Submit Form
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('#staffModal form');
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', function (e) {
+      // 1. Matikan tombol agar tidak bisa diklik lagi
+      submitBtn.disabled = true;
+
+      // 2. Ubah tampilan tombol menjadi status 'Menyimpan...'
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span> Menyimpan...';
+
+      // Opsional: Pengaman jika form gagal terkirim / terjadi error browser agar tombol kembali aktif
+      setTimeout(function() {
+        if (submitBtn.disabled) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        }
+      }, 10000); // Reset otomatis setelah 10 detik jika tidak ada respon halaman
+    });
+  });
 </script>
 <?= $this->endSection() ?>
