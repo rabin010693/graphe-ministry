@@ -219,9 +219,9 @@
         
         <div class="modal-footer border-top p-2 p-md-3 d-flex flex-column flex-sm-row gap-2">
           <button type="button" class="btn btn-light w-100 w-sm-auto order-2 order-sm-1" data-bs-dismiss="modal">Batal</button>
-          <button type="submit" class="btn-church  w-100 w-sm-auto order-1 order-sm-2 text-center px-4">Simpan Data</button>
+          <button type="submit" class="btn-church w-100 w-sm-auto order-1 order-sm-2 text-center" style="background-color:#0d1830; color:#fff;">Simpan Data</button>
         </div>
-      </form>
+      </form> 
     </div>
   </div>
 </div>

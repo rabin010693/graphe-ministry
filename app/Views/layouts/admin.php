@@ -69,7 +69,7 @@
                 </a>
 
                 <a class="nav-link <?= ($segment == 'pedang-roh' || $segment == 'periodicals') ? 'active' : '' ?>" href="<?= base_url('admin/pedang-roh') ?>">
-                    <i class="bi bi-journal-bookmark me-2"></i>Pedang Roh
+                    <i class="bi bi-book me-2"></i>Pedang Roh
                 </a>
 
                 <a class="nav-link <?= ($segment == 'articles' || $segment == 'article') ? 'active' : '' ?>" href="<?= base_url('admin/articles') ?>">
