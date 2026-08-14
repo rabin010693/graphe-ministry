@@ -2,14 +2,6 @@
 
 <?= $this->section('content') ?>
 
-<!-- Alert Notifikasi Flashdata -->
-<?php if (session()->getFlashdata('message')): ?>
-    <div class="alert alert-success alert-dismissible fade show rounded-3 shadow-sm" role="alert">
-        <i class="bi bi-check-circle me-1"></i> <?= session()->getFlashdata('message') ?>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-<?php endif; ?>
-
 <!-- Stats Card Dinamis -->
 <div class="row g-2 g-md-3 mb-4">
     <div class="col-6 col-md-4">

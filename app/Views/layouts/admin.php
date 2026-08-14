@@ -41,12 +41,18 @@
             <nav class="nav flex-column gap-1">
                 <?php 
                     $uri = service('uri');
+                    // Ambil segment ke-2 dari URL (misal: admin/dashboard -> 'dashboard')
                     $segment = $uri->getSegment(2);
                     $role = session()->get('role');
                 ?>
 
-                <!-- Menu Postingan -->
-                <a class="nav-link <?= ($segment == 'posts' || $segment == 'dashboard') ? 'active' : '' ?>" href="<?= base_url('admin/posts') ?>">
+                <!-- 1. Menu Dashboard (Baru) -->
+                <a class="nav-link <?= ($segment == 'dashboard' || $segment == '') ? 'active' : '' ?>" href="<?= base_url('admin/dashboard') ?>">
+                    <i class="bi bi-speedometer2 me-2"></i>Dashboard
+                </a>
+
+                <!-- 2. Menu Postingan (Diperbarui logika active-nya) -->
+                <a class="nav-link <?= ($segment == 'posts') ? 'active' : '' ?>" href="<?= base_url('admin/posts') ?>">
                     <i class="bi bi-file-earmark-text me-2"></i>Postingan
                 </a>
 

@@ -26,7 +26,7 @@
             <div><i class="bi bi-geo-alt-fill me-1"></i><small> Jl. Danau Agung 2 No. 5-7 Sunter Agung, Jakarta Utara 14350 Indonesia </small></div>
             <div class="social-icons">
                 <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-youtube"></i></a>
                 <a href="#"><i class="bi bi-instagram"></i></a>
                 <a href="#"><i class="bi bi-spotify"></i></a>
             </div>
@@ -39,9 +39,13 @@
             <a class="navbar-brand" href="<?= base_url('/') ?>">
                 <img src="<?= base_url('assets/img/Graphe-Ministry-logo-white.png') ?>" alt="Salvation Church Logo" height="30">
             </a>
-            
+<!--             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" style="border-color: rgba(255,255,255,0.4);">
                 <span class="navbar-toggler-icon" style="filter: invert(1) grayscale(100%) brightness(200%);"></span>
+            </button> -->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" style="border-color: rgba(255,255,255,0.4); padding: 4px 8px; font-size: 0.85rem;">
+                <span class="navbar-toggler-icon" style="filter: invert(1) grayscale(100%) brightness(200%); transform: scale(0.75);"></span>
             </button>
 
             <!-- Bagian yang akan melipat di layar kecil & muncul saat ikon garis tiga diklik -->

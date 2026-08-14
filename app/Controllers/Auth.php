@@ -10,7 +10,7 @@ class Auth extends BaseController
     {
         // Jika sudah login, lempar langsung ke dashboard
         if (session()->get('logged_in')) {
-            return redirect()->to(base_url('admin/posts'));
+            return redirect()->to(base_url('admin/dashboard'));
         }
 
         return view('admin/login');
@@ -39,7 +39,9 @@ class Auth extends BaseController
                     'logged_in' => true,
                 ];
                 $session->set($sessionData);
-                return redirect()->to(base_url('admin/posts'))->with('message', 'Selamat datang kembali, ' . $user['name']);
+
+                // Ubah tujuan redirect ke admin/dashboard
+                return redirect()->to(base_url('admin/dashboard'))->with('message', 'Selamat datang kembali, ' . $user['name']);
             } else {
                 return redirect()->back()->withInput()->with('error', 'Password yang Anda masukkan salah.');
             }
