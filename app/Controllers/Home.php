@@ -10,6 +10,7 @@ use App\Models\GalleryModel;
 use App\Models\EventModel;
 use App\Models\ChurchModel;
 use App\Models\PeriodicalModel;
+use App\Models\VideoModel;
 
 class Home extends BaseController
 {
@@ -52,6 +53,7 @@ class Home extends BaseController
         return view('contact', ['title' => 'Contact Us - Graphe Ministry']);
     }
 
+    //  FUNGSI ACARA TIDAK DINAMIS ATAU STATIS  //
     // public function events(): string
     // {
     //     return view('events', ['title' => 'Events - Graphe Ministry']);
@@ -123,6 +125,7 @@ class Home extends BaseController
         return view('gereja/jadwal_kebaktian', ['title' => 'Jadwal Kebaktian - Graphe Ministry']);
     }
 
+    //  FUNGSI LIST GEREJA TIDAK DINAMIS ATAU STATIS  //
     // public function gerejaGereja(): string
     // {
     //     return view('gereja/gereja_lainnya', ['title' => 'GBIA Seluruh Indonesia - Graphe Ministry']);
@@ -197,6 +200,8 @@ class Home extends BaseController
         return view('panti-asuhan/karena_kasih', ['title' => 'Tentang - Graphe Ministry']);
     }
 
+
+    //  FUNGSI Staff panti TIDAK DINAMIS ATAU STATIS  //
     // public function staffPanti(): string
     // {
     //     return view('panti-asuhan/staff_panti', ['title' => 'Staff & Anak - Graphe Ministry']);
@@ -266,6 +271,7 @@ class Home extends BaseController
         return view('multimedia/program_rbk', ['title' => 'Program RBK - Graphe Ministry']);
     }
 
+    //  FUNGSI MEDIA TIDAK DINAMIS ATAU STATIS  //
     // public function kebenaranMedia(): string
     // {
     //     return view('multimedia/kebenaran_memerdekakan', ['title' => 'Kebenaran Memerdekakan - Graphe Ministry']);
@@ -294,6 +300,7 @@ class Home extends BaseController
         return view('multimedia/mutiara_kebenaran', ['title' => 'Mutiara Kebenaran - Graphe Ministry']);
     }
 
+    //  FUNGSI Galeri TIDAK DINAMIS ATAU STATIS  //
     // public function galeriMedia(): string
     // {
     //     return view('multimedia/galeri', ['title' => 'Galeri - Graphe Ministry']);
@@ -313,11 +320,38 @@ class Home extends BaseController
         return view('multimedia/galeri', $data);
     }
 
-    public function videoMedia(): string
+    //  FUNGSI VIDEO TIDAK DINAMIS ATAU STATIS  //
+    // public function videoMedia(): string
+    // {
+    //     return view('multimedia/video', ['title' => 'Video - Graphe Ministry']);
+    // }
+
+   public function videoMedia() // atau index() jika di Multimedia.php
     {
-        return view('multimedia/video', ['title' => 'Video - Graphe Ministry']);
+        $videoModel = new VideoModel();
+
+        // 1. Ambil video yang KHUSUS diset 'is_featured = 1' saja untuk banner atas
+        // (Gunakan first(), tapi JANGAN fallback ambil video biasa jika is_featured = 0)
+        $featuredVideo = $videoModel->where('is_featured', 1)
+                                    ->orderBy('id', 'DESC')
+                                    ->first();
+
+        // 2. Ambil SELURUH video tanpa terkecuali untuk Grid Bawah
+        $videos = $videoModel->orderBy('published_at', 'DESC')
+                            ->orderBy('id', 'DESC')
+                            ->findAll();
+
+        $data = [
+            'title'          => 'Galeri Video & Live Streaming',
+            'featured_video' => $featuredVideo,
+            'videos'         => $videos
+        ];
+
+        return view('multimedia/video', $data);
     }
 
+
+    //  FUNGSI P.ROH TIDAK DINAMIS ATAU STATIS  //
     // public function pedangrohDownload(): string
     // {
     //     return view('downloads/pedang_roh', ['title' => 'Pedang Roh - Graphe Ministry']);

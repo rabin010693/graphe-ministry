@@ -2,29 +2,18 @@
 
 <?= $this->section('content') ?>
 
-<!-- Hero Section -->
-<!-- <header class="hero pb-5 bg-primary text-white position-relative overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('<?= base_url('assets/img/hero-bg.jpg') ?>') center/cover no-repeat;">
-    <div class="container text-center pt-5 pb-5 position-relative">
-        <div class="eyebrow mb-3 text-uppercase fw-semibold tracking-wider text-danger" data-aos="fade-down" data-aos-duration="800"><?= lang('Multimedia.video.badge') ?></div>
-        <h1 class="mx-auto text-white fw-bold" style="max-width:760px; font-size:2.2rem;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><?= lang('Multimedia.video.hero_title') ?></h1>
-        <p class="lead text-light opacity-90 mx-auto" style="max-width: 650px;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><?= lang('Multimedia.video.hero_subtitle') ?></p>
-    </div>
-</header> -->
-
 <header class="hero pb-5">
     <div class="container text-center pt-5 pb-5">
         <div class="eyebrow mb-3 text-uppercase" data-aos="fade-down" data-aos-duration="800"><?= lang('Multimedia.video.badge') ?></div>
         <h1 class="mx-auto" style="max-width:760px; font-size:2.2rem;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><?= lang('Multimedia.video.hero_title') ?></h1>
         <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><?= lang('Multimedia.video.hero_subtitle') ?></p>
-    </div>
+    </div>  
 </header>
 
-<!-- Main Video Section -->
 <section class="py-5 bg-light">
     <div class="container">
         
         <?php 
-            // Formatter tanggal sesuai locale aktif ('id' / 'en')
             $currentLocale = service('request')->getLocale();
             $dateFormatter = new \IntlDateFormatter(
                 $currentLocale,
@@ -33,89 +22,83 @@
             );
         ?>
 
-        <!-- Featured / Live Streaming Utama (Hero Video) -->
-        <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white mb-5" data-aos="fade-up" data-aos-duration="1000">
-            <div class="row g-0 align-items-center">
-                <div class="col-lg-7">
-                    <!-- Responsive YouTube Embed -->
-                    <div class="ratio ratio-16x9">
-                        <iframe src="https://www.youtube.com/embed/qnpxm8kNUhQ?start=13" title="Live Streaming Ibadah Raya" allowfullscreen loading="lazy"></iframe>
+        <!-- ================= 1. FEATURED / HERO VIDEO ================= -->
+        <?php if (!empty($featured_video)): ?>
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white mb-5" data-aos="fade-up" data-aos-duration="1000">
+                <div class="row g-0 align-items-center">
+                    <div class="col-lg-7">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/<?= esc($featured_video['youtube_id']) ?>" title="<?= esc($featured_video['title']) ?>" allowfullscreen loading="lazy"></iframe>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-5 p-4 p-md-5">
-                    <span class="badge bg-danger text-uppercase px-3 py-1 mb-2 rounded-pill"><i class="bi bi-broadcast me-1"></i> <?= lang('Multimedia.video.featured_badge') ?></span>
-                    <h2 class="h4 fw-bold text-dark mb-3">Kebaktian Minggu Sore, 02 Agustus 2026</h2>
-                    <p class="text-secondary small mb-4">Nikmati rekaman siaran langsung ibadah minggu ini bersama Pdt. Dr. Andrew M. Liauw. Mari bertumbuh bersama dalam kebenaran firman Tuhan yang alkitabiah.</p>
-                    <div class="d-flex align-items-center text-muted small">
-                        <i class="bi bi-calendar-event me-2 text-primary"></i> <?= $dateFormatter->format(strtotime('2026-08-02')) ?> &bull; 
-                        <span class="ms-2"><i class="bi bi-eye me-1 text-primary"></i> <?= lang('Multimedia.video.views_count') ?></span>
+                    <div class="col-lg-5 p-4 p-md-5">
+                        <span class="badge bg-danger text-uppercase px-3 py-1 mb-2 rounded-pill">
+                            <i class="bi bi-broadcast me-1"></i> <?= lang('Multimedia.video.featured_badge') ?>
+                        </span>
+                        <h2 class="h4 fw-bold text-dark mb-3"><?= esc($featured_video['title']) ?></h2>
+                        <p class="text-secondary small mb-4"><?= esc($featured_video['description']) ?></p>
+                        <div class="d-flex align-items-center text-muted small">
+                            <i class="bi bi-calendar-event me-2 text-primary"></i> 
+                            <?= $dateFormatter->format(strtotime($featured_video['published_at'] ?? $featured_video['created_at'])) ?>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <?php endif; ?>
 
-        <!-- Filter Kategori Tombol -->
+       <!-- ================= 2. TOMBOL FILTER KATEGORI ================= -->
         <div class="row justify-content-center mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-            <div class="col-lg-8 text-center">
+            <div class="col-lg-10 text-center">
                 <div class="btn-group flex-wrap gap-2 justify-content-center" role="group" aria-label="Filter Video">
-                    <button type="button" class="btn btn-dark rounded-pill px-4 py-2 active shadow-sm" data-filter="all"><?= lang('Multimedia.video.categories.all') ?></button>
-                    <button type="button" class="btn btn-outline-dark rounded-pill px-4 py-2 shadow-sm" data-filter="ibadah"><?= lang('Multimedia.video.categories.ibadah') ?></button>
-                    <button type="button" class="btn btn-outline-dark rounded-pill px-4 py-2 shadow-sm" data-filter="khotbah"><?= lang('Multimedia.video.categories.khotbah') ?></button>
-                    <button type="button" class="btn btn-outline-dark rounded-pill px-4 py-2 shadow-sm" data-filter="pemuda"><?= lang('Multimedia.video.categories.pemuda') ?></button>
+                    <button type="button" class="btn btn-dark rounded-pill px-4 py-2 active shadow-sm" data-filter="all">
+                        <?= lang('Multimedia.video.categories.all') ?>
+                    </button>
+                    <button type="button" class="btn btn-outline-dark rounded-pill px-4 py-2 shadow-sm" data-filter="ibadah_umum">
+                        <?= lang('Multimedia.video.categories.ibadah_umum') ?>
+                    </button>
+                    <button type="button" class="btn btn-outline-dark rounded-pill px-4 py-2 shadow-sm" data-filter="khotbah_rabu">
+                        <?= lang('Multimedia.video.categories.khotbah_rabu') ?>
+                    </button>
+                    <button type="button" class="btn btn-outline-dark rounded-pill px-4 py-2 shadow-sm" data-filter="seminar">
+                        <?= lang('Multimedia.video.categories.seminar') ?>
+                    </button>
+                    <button type="button" class="btn btn-outline-dark rounded-pill px-4 py-2 shadow-sm" data-filter="podcast">
+                        <?= lang('Multimedia.video.categories.podcast') ?>
+                    </button>
                 </div>
             </div>
         </div>
 
-        <!-- Grid Video Lainnya -->
+        <!-- ================= 3. GRID VIDEO DINAMIS ================= -->
         <div class="row g-4 video-grid">
-            
-            <!-- Item Video 1 -->
-            <div class="col-md-6 col-lg-4 video-item" data-category="ibadah" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
-                <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white h-100">
-                    <div class="ratio ratio-16x9">
-                        <iframe src="https://www.youtube.com/embed/Q9OnZlgXLdo?start=2" title="Video Khotbah" allowfullscreen loading="lazy"></iframe>
+            <?php if (!empty($videos)): ?>
+                <?php foreach ($videos as $v): ?>
+                    <div class="col-md-6 col-lg-4 video-item" data-category="<?= esc($v['category']) ?>" data-aos="fade-up" data-aos-duration="800">
+                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white h-100">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube.com/embed/<?= esc($v['youtube_id']) ?>" title="<?= esc($v['title']) ?>" allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <div class="card-body p-4">
+                                <small class="text-muted d-block mb-1">
+                                    <i class="bi bi-calendar3 me-1"></i> <?= $dateFormatter->format(strtotime($v['published_at'] ?? $v['created_at'])) ?>
+                                </small>
+                                <h5 class="fw-bold text-dark fs-6 mb-2"><?= esc($v['title']) ?></h5>
+                                <p class="text-secondary small mb-0"><?= esc($v['description']) ?></p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body p-4">
-                        <small class="text-muted d-block mb-1"><i class="bi bi-calendar3 me-1"></i> <?= $dateFormatter->format(strtotime('2026-07-26')) ?></small>
-                        <h5 class="fw-bold text-dark fs-6 mb-2">Kekuatan di Tengah Badai Kehidupan</h5>
-                        <p class="text-secondary small mb-0">Pembahasan mendalam mengenai pemeliharaan Allah bagi orang percaya.</p>
-                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div class="col-12 text-center py-5">
+                    <p class="text-muted">Belum ada video lain yang tersedia.</p>
                 </div>
-            </div>
-
-            <!-- Item Video 2 -->
-            <div class="col-md-6 col-lg-4 video-item" data-category="khotbah" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white h-100">
-                    <div class="ratio ratio-16x9">
-                        <iframe src="https://www.youtube.com/embed/zulrAIOVn6Y?start=3" title="Video Teologi" allowfullscreen loading="lazy"></iframe>
-                    </div>
-                    <div class="card-body p-4">
-                        <small class="text-muted d-block mb-1"><i class="bi bi-calendar3 me-1"></i> <?= $dateFormatter->format(strtotime('2026-07-22')) ?></small>
-                        <h5 class="fw-bold text-dark fs-6 mb-2">Doktrin Keselamatan Berdasarkan Alkitab</h5>
-                        <p class="text-secondary small mb-0">Seri pengajaran teologi praktis dan akademis tanpa kompromi.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Item Video 3 -->
-            <div class="col-md-6 col-lg-4 video-item" data-category="pemuda" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
-                <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white h-100">
-                    <div class="ratio ratio-16x9">
-                        <iframe src="https://www.youtube.com/embed/qnpxm8kNUhQ?start=13" title="Video Pemuda" allowfullscreen loading="lazy"></iframe>
-                    </div>
-                    <div class="card-body p-4">
-                        <small class="text-muted d-block mb-1"><i class="bi bi-calendar3 me-1"></i> <?= $dateFormatter->format(strtotime('2026-07-19')) ?></small>
-                        <h5 class="fw-bold text-dark fs-6 mb-2">Youth Fellowship: Menjaga Kekudusan Masa Muda</h5>
-                        <p class="text-secondary small mb-0">Sesi tanya jawab dan diskusi interaktif bersama kaum muda gereja.</p>
-                    </div>
-                </div>
-            </div>
-
+            <?php endif; ?>
         </div>
+
     </div>
 </section>
 
-<!-- Skrip Sederhana untuk Filter Kategori Video -->
+<!-- Filter Script -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const filterButtons = document.querySelectorAll(".btn-group button");

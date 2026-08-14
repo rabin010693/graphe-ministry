@@ -18,6 +18,7 @@ use App\Controllers\Admin\Churches;
 use App\Controllers\Admin\PedangRohController; // <-- Import PedangRohController
 use App\Controllers\Language;
 use App\Controllers\Admin\ArticleController;
+use App\Controllers\Admin\Videos;
 
 /** @var RouteCollection $routes */
 
@@ -129,6 +130,11 @@ $routes->group('admin', ['filter' => 'adminAuth'], function ($routes) {
     $routes->get('audios', [Audios::class, 'index']);
     $routes->post('audios/save', [Audios::class, 'save']);
     $routes->get('audios/delete/(:num)', [Audios::class, 'delete']);
+
+    // CRUD Video Youtube / Multimedia (BARU DITAMBAHKAN)
+    $routes->get('videos', [Videos::class, 'index']);
+    $routes->post('videos/save', [Videos::class, 'save']);
+    $routes->get('videos/delete/(:num)', [Videos::class, 'delete']);
 
     // CRUD Gallery
     $routes->get('galleries', [Galleries::class, 'index']);

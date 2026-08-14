@@ -13,9 +13,9 @@
 
 <header class="hero pb-5">
     <div class="container text-center pt-5 pb-5">
-        <div class="eyebrow mb-3 text-uppercase" data-aos="fade-down" data-aos-duration="800"><?= lang('Orphanage.murah_hati.badge') ?></div>
-        <h1 class="mx-auto" style="max-width:760px; font-size:2.2rem;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><?= lang('Orphanage.murah_hati.hero_title') ?></h1>
-        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><?= lang('Orphanage.murah_hati.hero_subtitle') ?></p>
+        <div class="eyebrow mb-3 text-uppercase" data-aos="fade-down" data-aos-duration="800"><?= lang('Multimedia.radio.badge') ?></div>
+        <h1 class="mx-auto" style="max-width:760px; font-size:2.2rem;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><?= lang('Multimedia.radio.hero_title') ?></h1>
+        <p class="lead text-light opacity-85 mx-auto" style="max-width: 600px;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><?= lang('Multimedia.radio.hero_subtitle') ?></p>
     </div>
 </header>
 

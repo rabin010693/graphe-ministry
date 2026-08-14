@@ -174,18 +174,16 @@ return [
     ],
 
    'video' => [
-        'badge'         => 'Broadcasts & Recordings',
-        'hero_title'    => 'Video Gallery & Live Streaming',
-        'hero_subtitle' => 'Watch past services, spiritual sermons, and live broadcasts of our church ministry wherever you are.',
-        
-        'featured_badge' => 'Featured / Latest',
-        'views_count'    => '1.2k Views',
-
+        'badge'          => 'Multimedia',
+        'hero_title'     => 'Video Gallery & Live Streaming',
+        'hero_subtitle'  => 'Watch recorded services, sermons, seminars, and podcasts.',
+        'featured_badge' => 'Featured Video',
         'categories' => [
-            'all'     => 'All Videos',
-            'ibadah'  => 'General Service',
-            'khotbah' => 'Thematic Sermons',
-            'pemuda'  => 'Youth & Teens',
+            'all'         => 'All',
+            'ibadah_umum' => 'Sunday General Service',
+            'khotbah_rabu' => 'Wednesday Prayer Meeting',
+            'seminar'     => 'Seminars',
+            'podcast'     => 'Podcast',
         ],
     ],
 ];

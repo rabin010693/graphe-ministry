@@ -30,32 +30,32 @@ return [
     'radio' => [
         'badge'         => 'RBK Radio',
         'hero_title'    => 'Radio Berita Klasik - AM 828',
-        'hero_subtitle' => 'Disseminating logical, academic, and in-depth biblical teaching through high-quality spiritual and theological ministry',
+        'hero_subtitle' => 'Menyebarluaskan pengajaran Alkitab yang logis, akademis, dan mendalam melalui pelayanan spiritual dan teologis berkualitas tinggi.',
         
         'station_freq'  => 'AM / MW 828 kHz',
-        'about_title'   => 'About Radio Berita Klasik (RBK)',
+        'about_title'   => 'Tentang Radio Berita Klasik (RBK)',
         
-        'p1'            => 'For by grace you have been saved through faith (Eph. 2:8-9), and faith comes from hearing, and hearing through the word of Christ (Rom. 10:17). Therefore, so that as many people as possible may be saved, we must unceasingly proclaim the word of Christ. Apostle Paul instructed us to do so whether in season or out of season.',
-        'p2'            => 'Realizing the need to sound forth the word of Christ to as wide an audience as possible, <strong>GRAPHE</strong> prayed for a radio broadcasting station. GRAPHE desired a radio station distinct from others—one that plays music pleasing to God accompanied by pure biblical preaching with firm, uncompromising doctrine.',
-        'p3'            => 'God blessed the members of GRAPHE so that a radio station named <strong>Radio Berita Klasik (RBK)</strong> could be established. We know that although various world news events are reported, the ultimate and most classic (valuable) news remains the Good News of the Savior.',
+        'p1'            => 'Manusia diselamatkan oleh iman (Ef.2:8-9), dan iman timbul daripendengar akan firman Kristus (Rom. 10:17). Oleh sebab itu agar sebanyak mungkin orang diselamatkan, maka kita harus tak henti-hentinya mendengungkan firman Kristus. Bahkan Rasul Paulus mengatakan bahwa kita harus melakukan itu baik ataupun tidak baik waktunya.',
+        'p2'            => 'Kerena kebutuhan untuk mendengungkan firman Kristus dengan jangkauan yang seluas mungkin, GRAPHE berdoa meminta radio pemancar kepada Tuhan. GRAPHE menginginkan sebuah stasiun radio yang lain dari yang lain, yaitu yang melantunkan musik yang menyenangkan hati Tuhan disertai dengan pemberitaan firman yang murni dengan doktrin yang alkitabiah secara tegas tanpa kompromi.',
+        'p3'            => 'Tuhan memberkati anggota jemaat <strong>GRAPHE </strong> sehingga bisa terwujud sebuah stasiun radio yang kami beri nama <strong>Radio Berita Klasik (RBK)</strong>. Kita tahu bahwa sekalipun disampaikan berbagai berita tentang peristiwa-peristiwa yang terjadi di dunia , namun berita utama dan berita yang paling klasik (bernilai) adalah berita tentang Sang Juruselamat.',
 
-        'coverage_title'=> 'Broadcast Coverage & Frequency',
-        'coverage_desc' => 'Broadcasting on <strong>AM/MW 828 kHz</strong>, RBK\'s coverage reaches the <strong>JABODETABEK</strong> area, with signals also received in parts of Lampung Province. If you are within RBK\'s broadcast radius, tune in to receive biblical teaching directly from your location.',
+        'coverage_title'=> 'Cakupan dan Frekuensi Siaran',
+        'coverage_desc' => 'Dengan gelombang AM/MW 282 Khz, Jangakauan RBK hanya sekitar JABODETABEK, walaupun ada bagian dari propinsi Lampung yang dapat menangkap sinyal kami. Jika anda kebetulan dalam radius jangkauan RBK, nikmati penyampaian firman Tuhan yang alkitabiah dari kamar tidur anda.',
 
-        'cta_title'     => 'Want to check our broadcast schedule?',
-        'cta_desc'      => 'Discover daily spiritual programs and biblical news broadcasts.',
-        'cta_btn'       => 'View RBK Programs',
+        'cta_title'     => 'Ingin menyimak jadwal acara kami?',
+        'cta_desc'      => 'Temukan berbagai program rohani dan berita alkitabiah harian.',
+        'cta_btn'       => 'Lihat Program RBK',
 
-        'info_title'    => 'Station Information',
+        'info_title'    => 'Informasi Stasiun',
         'info_station'  => 'Station',
         'info_station_val' => 'AM 828 kHz (RBK Radio Station)',
-        'info_established' => 'Established',
+        'info_established' => 'Didirikan',
         'info_established_val' => 'November 2004',
-        'info_address'  => 'Address',
+        'info_address'  => 'Alamat',
         'info_address_val' => 'Jalan Danau Agung 2, No. 5-7, Sunter, North Jakarta 14350, INDONESIA',
 
-        'contact_title' => 'Contact Us',
-        'phone'         => 'Phone Number',
+        'contact_title' => 'Hubungi kami',
+        'phone'         => 'Nomor Telepon',
         'email'         => 'Email',
         'marketing'     => 'Marketing',
     ],
@@ -174,18 +174,16 @@ return [
     ],
 
     'video' => [
-        'badge'         => 'Broadcasts & Recordings',
-        'hero_title'    => 'Galeri Video & Live Streaming',
-        'hero_subtitle' => 'Saksikan kembali ibadah, khotbah rohani, dan siaran langsung pelayanan gereja di mana pun Anda berada.',
-        
-        'featured_badge' => 'Utama / Terbaru',
-        'views_count'    => '1.2rb Penonton',
-
+        'badge'          => 'Multimedia',
+        'hero_title'     => 'Galeri Video & Live Streaming',
+        'hero_subtitle'  => 'Saksikan rekaman ibadah, khotbah, seminar, dan podcast.',
+        'featured_badge' => 'Video Utama',
         'categories' => [
-            'all'     => 'Semua Video',
-            'ibadah'  => 'Ibadah Raya',
-            'khotbah' => 'Khotbah Tematik',
-            'pemuda'  => 'Pemuda & Remaja',
+            'all'         => 'Semua',
+            'ibadah_umum' => 'Kebaktian Umum Minggu',
+            'khotbah_rabu' => 'Kebaktian Doa Rabu Malam',
+            'seminar'     => 'Seminar - Seminar',
+            'podcast'     => 'Podcast',
         ],
     ],
 ];

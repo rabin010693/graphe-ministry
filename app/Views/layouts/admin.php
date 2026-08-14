@@ -85,6 +85,10 @@
                 <a class="nav-link <?= ($segment == 'galleries') ? 'active' : '' ?>" href="<?= base_url('admin/galleries') ?>">
                     <i class="bi bi-images me-2"></i>Galeri Foto
                 </a>
+
+                <a class="nav-link <?= ($segment == 'videos') ? 'active' : '' ?>" href="<?= base_url('admin/videos') ?>">
+                    <i class="bi bi-youtube me-2"></i>Video Youtube
+                </a>
                
                 <a class="nav-link <?= ($segment == 'events') ? 'active' : '' ?>" href="<?= base_url('admin/events') ?>">
                     <i class="bi bi-calendar-event me-2"></i>
