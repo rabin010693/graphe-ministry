@@ -73,7 +73,7 @@
         <div class="row g-4 video-grid">
             <?php if (!empty($videos)): ?>
                 <?php foreach ($videos as $v): ?>
-                    <div class="col-md-6 col-lg-4 video-item" data-category="<?= esc($v['category']) ?>" data-aos="fade-up" data-aos-duration="800">
+                    <div class="col-md-6 col-lg-4 video-item" data-category="<?= esc($v['category']) ?>">
                         <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white h-100">
                             <div class="ratio ratio-16x9">
                                 <iframe src="https://www.youtube.com/embed/<?= esc($v['youtube_id']) ?>" title="<?= esc($v['title']) ?>" allowfullscreen loading="lazy"></iframe>
